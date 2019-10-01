@@ -152,7 +152,7 @@ Resources:
     SAelb:
       Type: AWS::ElasticLoadBalancing::LoadBalancer
       Properties:
-        Subnets: [!Ref 'PublicSubnetB']
+        Subnets: [!Ref 'PublicSubnetA', !Ref 'PublicSubnetB']
         Instances: [!Ref 'SAInstance1']
         SecurityGroups: [!Ref 'SASGELB']
         Listeners:
@@ -185,12 +185,14 @@ Resources:
     # The instances need to be accessible from the ELB to allow external traffic
     SASGapp:
       Type: AWS::EC2::SecurityGroup
-      SecurityGroupIngress:
-          SourceSecurityGroupId: !Ref 'SASGELB'
-          ToPort: 80
       Properties:
         GroupDescription: SA Assignment - App server security group
         VpcId: !Ref 'SAVPC'
+        SecurityGroupIngress:
+        - SourceSecurityGroupId: !Ref 'SASGELB'
+          FromPort: 80
+          ToPort: 80
+          IpProtocol: tcp
         Tags:
           - Key: environment
             Value: sa-assignment
