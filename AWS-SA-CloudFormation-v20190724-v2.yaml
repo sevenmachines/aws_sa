@@ -162,7 +162,7 @@ Resources:
         HealthCheck:
           HealthyThreshold: '2'
           Interval: '15'
-          Target: TCP:80
+          Target: TCP:443
           Timeout: '5'
           UnhealthyThreshold: '2'
         Tags:
@@ -182,12 +182,8 @@ Resources:
           - Key: Name
             Value: ELBSecurityGroup
 
-    # The instances need to be accessible from the ELB to allow external traffic
     SASGapp:
       Type: AWS::EC2::SecurityGroup
-      SecurityGroupIngress:
-          SourceSecurityGroupId: !Ref 'SASGELB'
-          ToPort: 80
       Properties:
         GroupDescription: SA Assignment - App server security group
         VpcId: !Ref 'SAVPC'
