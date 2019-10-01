@@ -176,6 +176,12 @@ Resources:
       Properties:
         GroupDescription: SA Assignment - ELB security group
         VpcId: !Ref 'SAVPC'
+        SecurityGroupIngress:
+          - Description: 'Allow access from external addresses on port 80'
+            CidrIp: '0.0.0.0/0'
+            FromPort: 80
+            ToPort: 80
+            IpProtocol: tcp
         Tags:
           - Key: environment
             Value: sa-assignment
@@ -189,10 +195,11 @@ Resources:
         GroupDescription: SA Assignment - App server security group
         VpcId: !Ref 'SAVPC'
         SecurityGroupIngress:
-        - SourceSecurityGroupId: !Ref 'SASGELB'
-          FromPort: 80
-          ToPort: 80
-          IpProtocol: tcp
+          - Description: 'Restrict access to instances to the ELB on port 80 only' 
+            SourceSecurityGroupId: !Ref 'SASGELB'
+            FromPort: 80
+            ToPort: 80
+            IpProtocol: tcp
         Tags:
           - Key: environment
             Value: sa-assignment
