@@ -1,0 +1,139 @@
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{mdframed}
+
+% Generic colours
+\definecolor{comments}{gray}{0.95}
+\definecolor{actions}{rgb}{1,0.5,0}
+\definecolor{done}{rgb}{0.8,0.8,0.8}
+\definecolor{revision}{rgb}{0.87,0.97,0.98}
+\definecolor{notes}{rgb}{0.5,0.8,0.8}
+\definecolor{alerts}{rgb}{1.0, 0.5, 0.5}
+
+% Generic commands
+\newcommand{\todobox}[1]{\todo[inline,color=white]{#1}}
+\newcommand{\tododone}[1]{\todo[inline,color=done]{DONE: #1}}
+\newcommand{\todonote}[1]{\todo[inline,color=note]{NOTE: #1}}
+\newcommand{\todocomment}[1]{\todo[inline,color=comments]{COMMENT: #1}}
+\newcommand{\todoaction}[1]{\todo[inline,color=actions]{ACTION: #1}}
+\newcommand{\todoalert}[1]{\todo[inline,color=alerts]{ALERT: #1}}
+
+
+\newcommand{\head}[1]{\chapter{#1}}
+
+\definecolor{principle}{rgb}{0.7,0.9,1.0}
+\definecolor{concept}{rgb}{0.8,0.8,0.8}
+\definecolor{subconcept}{rgb}{0.9,0.9,0.9}
+
+\newcommand{\principle}[1]{\begin{mdframed}[backgroundcolor=principle!20]\raggedright\textbf{\say{#1}}\end{mdframed}}
+
+\newcommand{\concept}[1]{\begin{mdframed}[backgroundcolor=concept!20]
+\raggedright
+#1
+\end{mdframed}}
+\newcommand{\knowledge}[1]{\begin{mdframed}[backgroundcolor=concept!20]\raggedright#1\end{mdframed}}
+\newcommand{\subconcept}[1]{\begin{mdframed}[backgroundcolor=subconcept!20]\raggedright{{#1}}\end{mdframed}}
+
+\newcommand{\ruled}{\noindent\rule{\textwidth}{1pt}}
+\newcommand{\question}[2]{
+	\ifx&#2&%
+	\section{#1}
+	\else
+	\section{#1}{\textit{#2}}
+	\fi
+}
+
+\newcommand{\unknown}{UNKNOWN}
+\newcommand{\staranswer}[5]{
+\noindent{\subsection{#1}} 
+\noindent\textbf{Situation:} #2 \\
+\noindent\textbf{Task: }#3  \\
+\noindent\textbf{Action: }#4 \\
+\noindent\textbf{Result: }#5 
+}
+
+\newcommand{\issue}[4]{
+	\noindent{\subsection{#1}} 
+	\noindent\textbf{Resolution: }#2  \\
+	\noindent\textbf{Detail: }#3
+	\ifx&#4&%
+	\else
+	\ima	
+	\fi
+	\noindent\textbf{}#3
+}
+
+\newcommand{\items}[1]{
+	\begin{itemize}[noitemsep]
+		#1
+	\end{itemize}
+}
+
+
+\newcommand{\imagefig}[2]{
+	\centering
+	\begin{minipage}[!t]{.49\textwidth}
+		\vspace{0pt}
+		\centering
+		\ifx&#1&%
+		\else
+		\includegraphics[width=1\linewidth]{images/#1}
+		\captionsetup{labelfont=bf,singlelinecheck=on,justification=raggedright}
+		\caption{#2}
+		\label{fig:#1}
+		\fi
+	\end{minipage}%
+}
+
+\newcommand{\expfig}[2]{
+	\begin{minipage}[!t]{.49\textwidth}
+		\vspace{0pt}
+		\centering
+		\ifx&#1&%
+		\else
+		\includegraphics[width=1\linewidth]{graphs/#1}
+		\captionsetup{labelfont=bf,singlelinecheck=on,justification=raggedright}
+		\caption{#2}
+		\label{fig:#1}
+		\fi
+	\end{minipage}%
+}
+
+\newcommand{\imagefigsingle}[2]{
+	\begin{figure}[!t]
+		\centering
+		\includegraphics[width=0.9\linewidth]{images/#1}
+		\captionsetup{labelfont=bf,singlelinecheck=on}
+		\caption{#2}
+		\label{fig:#1}
+	\end{figure}
+}
+
+\newcommand{\imagefigdual}[4]{
+	\ifx&#3&%
+	\begin{figure}[!t]
+		\raggedright
+		\imagefig{#1}{#2}
+		\imagefig{}{}
+	\end{figure}
+	\else
+	\begin{figure}[!t]
+		\imagefig{#1}{#2}
+		\imagefig{#3}{#4}
+	\end{figure}
+	\fi
+}
+
+\newcommand{\imagefigquad}[8]{
+	\begin{figure}[!t]
+		\imagefig{#1}{#2}
+		\imagefig{#3}{#4}
+		\ifx&#7&%
+		\raggedright
+		\imagefig{#5}{#6}
+		\else
+		\imagefig{#5}{#6}
+		\imagefig{#7}{#8}
+		\fi
+	\end{figure}
+}

@@ -130,6 +130,7 @@ Resources:
     SAInstance1:
       Type: AWS::EC2::Instance
       Properties:
+        KeyName: 'cryoaws-mini'
         DisableApiTermination: 'false'
         InstanceInitiatedShutdownBehavior: stop
         ImageId: ami-047bb4163c506cd98
@@ -152,7 +153,7 @@ Resources:
     SAelb:
       Type: AWS::ElasticLoadBalancing::LoadBalancer
       Properties:
-        Subnets: [!Ref 'PublicSubnetB']
+        Subnets: [!Ref 'PublicSubnetA', !Ref 'PublicSubnetB']
         Instances: [!Ref 'SAInstance1']
         SecurityGroups: [!Ref 'SASGELB']
         Listeners:
@@ -162,7 +163,7 @@ Resources:
         HealthCheck:
           HealthyThreshold: '2'
           Interval: '15'
-          Target: TCP:443
+          Target: TCP:80
           Timeout: '5'
           UnhealthyThreshold: '2'
         Tags:
@@ -176,17 +177,30 @@ Resources:
       Properties:
         GroupDescription: SA Assignment - ELB security group
         VpcId: !Ref 'SAVPC'
+        SecurityGroupIngress:
+          - Description: 'Allow access from external addresses on port 80'
+            CidrIp: '0.0.0.0/0'
+            FromPort: 80
+            ToPort: 80
+            IpProtocol: tcp
         Tags:
           - Key: environment
             Value: sa-assignment
           - Key: Name
             Value: ELBSecurityGroup
 
+    # The instances need to be accessible from the ELB to allow external traffic
     SASGapp:
       Type: AWS::EC2::SecurityGroup
       Properties:
         GroupDescription: SA Assignment - App server security group
         VpcId: !Ref 'SAVPC'
+        SecurityGroupIngress:
+          - Description: 'Restrict access to instances to the ELB on port 80 only' 
+            SourceSecurityGroupId: !Ref 'SASGELB'
+            FromPort: 80
+            ToPort: 80
+            IpProtocol: tcp
         Tags:
           - Key: environment
             Value: sa-assignment
