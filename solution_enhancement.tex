@@ -2,22 +2,52 @@
 
 \subsection{Operational}
 
+\textit{The ability to run and monitor systems to deliver business value and to continually improve supporting processes and procedures}
+
+\subsubsection{Improve monitoring and logging}
+
+Monitoring and logging on the existing instance can be increased by enabling the cloudwatch agent on the application instances
+
+
 \subsection{Security}
 
-\items {
-	\item Instances in public subnet
-	
-}
+\textit{The ability to protect information, systems, and assets while delivering business value through risk assessments and mitigation strategies}
+
+\subsubsection{Delete default security group}
+\subsubsection{Harden EC2 instances}
+
+\subsubsection{Enable SSM session manager}
+
+\subsubsection{Strengthen NACL to prevent cross-subnet traffic}
+
+\subsubsection{Only allow NACL to pass traffic to private subnets from public subnets}
+
+The private NACL allows all external traffic to pass. We can increase security by allowing only access from public subnets, or additionally from private endpoints, NAT gateways etc.
 
 \subsection{Reliability}
 
-\items {
-	\item Single instance with no auto-recovery
-}
+\textit{The ability of a system to recover from infrastructure or service disruptions, dynamically acquire computing resources to meet demand, and mitigate disruptions such as misconfigurations or transient network issues}
+
+Currently there is a single instance with no auto-recovery
+
+\subsubsection{Replicate instances into multiple AZs}
+
+\subsubsection{Create an auto-scaling group for application instances}
+
 \subsection{Performance}
 
-\items {
-	\item Bursting t2.micro instances with CPU credit limits
-}
+\textit{The ability to use computing resources efficiently
+	to meet system requirements, and to maintain that efficiency as demand changes and technologies evolve}
+
+\subsubsection{Change instance type}
+
+The current solution uses bursting t2.micro instances with CPU credit limits. This is very cost efficient, but performance is not suitable for reasonable traffic levels and exhausting CPU credits will cause degradation of availability.
 
 \subsection{Cost} 
+
+\textit{The ability to run systems to deliver business value at the lowest price point}
+
+
+
+
+

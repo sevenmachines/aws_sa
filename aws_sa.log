@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.21)  2 OCT 2019 11:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.21)  2 OCT 2019 12:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -419,36 +419,50 @@ LaTeX Font Info:    ... okay on input line 4.
 \everyMPtoPDFconversion=\toks18
 )
 \AtBeginShipoutBox=\box48
- (./problem_analysis.tex) (./solution_enhancement.tex
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 10.
+ (./problem_analysis.tex
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 15.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 10.
-)
-(./future_solutions.tex) [1
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 15.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 15.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 15.
 
-{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] (./
-aws_sa.aux) ) 
+Overfull \hbox (13.66512pt too wide) in paragraph at lines 15--15
+[]\OT1/cmr/m/n/10 Networking is a VPC with CIDR $10\OML/cmm/m/it/10 :\OT1/cmr/m
+/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0\O
+ML/cmm/m/it/10 =\OT1/cmr/m/n/10 16$ with 2 pub-lic sub-nets $10\OML/cmm/m/it/10
+ :\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cm
+r/m/n/10 0\OML/cmm/m/it/10 =\OT1/cmr/m/n/10 24$
+ []
+
+) (./solution_enhancement.tex [1
+
+{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]) (.
+/future_solutions.tex) [3] (./aws_sa.aux) ) 
 Here is how much of TeX's memory you used:
- 11335 strings out of 492649
- 220151 string characters out of 6129622
+ 11339 strings out of 492649
+ 220200 string characters out of 6129622
  277434 words of memory out of 5000000
- 15184 multiletter control sequences out of 15000+600000
- 531790 words of font info for 27 fonts, out of 8000000 for 9000
+ 15187 multiletter control sequences out of 15000+600000
+ 532136 words of font info for 28 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,5n,35p,10418b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmbx10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmbx12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-y10.pfb>
-Output written on aws_sa.pdf (2 pages, 53086 bytes).
+</usr/local/texlive/2018/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2018/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2018/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2018/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmti10.pfb>
+Output written on aws_sa.pdf (3 pages, 84939 bytes).
 PDF statistics:
- 27 PDF objects out of 1000 (max. 8388607)
- 18 compressed objects within 1 object stream
+ 38 PDF objects out of 1000 (max. 8388607)
+ 26 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

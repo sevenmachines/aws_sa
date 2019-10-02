@@ -1,13 +1,21 @@
 \relax 
 \providecommand\zref@newlabel[2]{}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Solution analysis and fixes}{1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}The site cannot be accessed from external addresses}{1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Load balancer cannot route to subnet}{1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.3}Instances cannot be accessed from the load balancer}{1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.4}ELB healthcheck on wrong instance port}{1}}
-\@writefile{toc}{\contentsline {section}{\numberline {2}Solution Enhancement}{1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Operational}{1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Security}{1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Reliability}{1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Performance}{1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Cost}{2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}ELB healthcheck on wrong instance port}{1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}The site cannot be accessed from external addresses}{1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3}Load balancer cannot route to subnet}{1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4}Instances cannot be accessed from the load balancer}{1}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Solution Enhancement}{2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Operational}{2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.1}Improve monitoring and logging}{2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Security}{2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}Harden EC2 instances}{2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Enable SSM session manager}{2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.3}Strengthen NACL to prevent cross-subnet traffic}{2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.4}Only allow NACL to pass traffic to private subnets from public subnets}{2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Reliability}{2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.1}Replicate instances into multiple AZs}{2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.2}Create an auto-scaling group for application instances}{2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Performance}{2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.1}Change instance type}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Cost}{3}}

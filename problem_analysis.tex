@@ -1,5 +1,29 @@
 \section{Solution analysis and fixes}
 
+The current implementation cannot be accessed from external networks. The service consists of,
+
+\items{
+	\item Networking is a VPC with CIDR $10.0.0.0/16$ with 2 public subnets $10.0.0.0/24$ and  $10.0.1.0/24$ in eu-west-1b and eu-west-1b respectively, as well as 2 private subnets $10.0.2.0/24$, $10.0.3.0/24$ in eu-west-1b and eu-west-1b. 
+	
+	\item VPC has an internet gateway and a classic load balancer (ELB)
+	 
+	\item Routing is setup up to allow all traffic between subnets and out to external addresses.
+	
+	\item There are 2 security groups, one for the single EC2 application instance, and one for the ELB.
+	 
+	\item DNS is enabled and the instane has a pubic IP address
+}
+
+
+\issue{ELB healthcheck on wrong instance port}
+{Change ELB port for healthcheck from 443 to 80}
+{
+	Httpd starts on-instance on port 80. The ELB correctly forwards ports
+	from from 80 to instance port 80.  However, the healthcheck looks to verify instance health on port 443 through a tcp connection. This change simply targets the healthcheck correctly at port 80 on the instance.
+}
+{}
+
+
 \issue{The site cannot be accessed from external addresses}
 {Add everywhere access to load balancer ingress}
 {
@@ -17,14 +41,6 @@ allows it to route to PublicSubnetA also, where the current instance is located.
 
 \issue{Instances cannot be accessed from the load balancer}
 {Allow access to the instance from the ELB only}
-{This change allows traffic from the ELB to the instances}
+{This change allows traffic from the ELB to the instances. This is set to all TCP traffic to port 80 to allow the ELBs TCP-based healthcheck to pass}
 {}
 
-
-\issue{ELB healthcheck on wrong instance port}
-{Change ELB port for healthcheck from 443 to 80}
-{
-Httpd starts on-instance on port 80. The ELB correctly forwards ports
-from from 80 to instance port 80.  However, the healthcheck looks to verify instance health on port 443 through a tcp connection. This change simply targets the healthcheck correctly at port 80 on the instance.
-}
-{}
