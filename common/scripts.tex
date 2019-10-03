@@ -2,6 +2,11 @@
 \usepackage{xcolor}
 \usepackage{mdframed}
 
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{placeins}
+\usepackage{tabularx}
+
 % Generic colours
 \definecolor{comments}{gray}{0.95}
 \definecolor{actions}{rgb}{1,0.5,0}
@@ -58,9 +63,8 @@
 	\noindent\textbf{Detail: }#3
 	\ifx&#4&%
 	\else
-	\ima	
+	#4	
 	\fi
-	\noindent\textbf{}#3
 }
 
 \newcommand{\items}[1]{
@@ -85,22 +89,9 @@
 	\end{minipage}%
 }
 
-\newcommand{\expfig}[2]{
-	\begin{minipage}[!t]{.49\textwidth}
-		\vspace{0pt}
-		\centering
-		\ifx&#1&%
-		\else
-		\includegraphics[width=1\linewidth]{graphs/#1}
-		\captionsetup{labelfont=bf,singlelinecheck=on,justification=raggedright}
-		\caption{#2}
-		\label{fig:#1}
-		\fi
-	\end{minipage}%
-}
 
 \newcommand{\imagefigsingle}[2]{
-	\begin{figure}[!t]
+	\begin{figure}[!h]
 		\centering
 		\includegraphics[width=0.9\linewidth]{images/#1}
 		\captionsetup{labelfont=bf,singlelinecheck=on}
@@ -111,13 +102,13 @@
 
 \newcommand{\imagefigdual}[4]{
 	\ifx&#3&%
-	\begin{figure}[!t]
+	\begin{figure}[!h]
 		\raggedright
 		\imagefig{#1}{#2}
 		\imagefig{}{}
 	\end{figure}
 	\else
-	\begin{figure}[!t]
+	\begin{figure}[!h]
 		\imagefig{#1}{#2}
 		\imagefig{#3}{#4}
 	\end{figure}
@@ -135,5 +126,31 @@
 		\imagefig{#5}{#6}
 		\imagefig{#7}{#8}
 		\fi
+	\end{figure}
+}
+
+\newcommand{\dualtableimage}[6]{
+	\begin{figure}[t!]
+		\centering
+		\begin{minipage}{.48\textwidth}
+			\vspace{0pt}
+			\small
+			\begin{tabular}{#1}
+				\hline
+				#2
+				\hline
+			\end{tabular}
+			\captionsetup{labelfont=bf,singlelinecheck=on,justification=raggedright}
+			\captionof{table}{Table #3}
+			\label{table:#4}
+		\end{minipage}
+		\hfill
+		\begin{minipage}{.48\textwidth}
+			\vspace{0pt}
+			\includegraphics[width=1\linewidth]{images/#5}
+			\captionsetup{labelfont=bf,singlelinecheck=on,justification=raggedright}
+			\captionof{figure}{#6}
+			\label{fig:#5}
+		\end{minipage}
 	\end{figure}
 }
