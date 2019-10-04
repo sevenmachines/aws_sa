@@ -13,7 +13,7 @@ The current implementation cannot be accessed from external networks. The servic
 	
 	\item There are 2 security groups, one for the single EC2 application instance, and one for the ELB.
 	 
-	\item DNS is enabled and the instane has a pubic IP address
+	\item DNS is enabled and the instance has a pubic IP address
 }
 
 \imagefigsingle
@@ -29,11 +29,12 @@ The current implementation cannot be accessed from external networks. The servic
 	from from 80 to instance port 80.  However, the healthcheck looks to verify instance health on port 443 through a tcp connection. This change simply targets the healthcheck correctly at port 80 on the instance.
 }
 {
-	\imagefigdual
+	\imagefigsinglebox
 	{lb-healthcheck_443}
-	{In the AWS console, navigate to Services  $\rightarrow$ EC2  $\rightarrow$ Load Balancers}
+	{In the AWS console, navigate to Services  $\rightarrow$ EC2  $\rightarrow$ Load Balancers and select the 'Health check' tab.}
+	\imagefigsinglebox
 	{lb-healthcheck_80}
-	{In the 'Health check' tab, and change the port to $80$}
+	{Change the port from $443$ to $80$. This will leave the load balancer checking the instance health by connecting through tcp on the servers default HTTP port.}
 }
 
 \FloatBarrier
@@ -46,11 +47,13 @@ The current implementation cannot be accessed from external networks. The servic
 	allows it to route to PublicSubnetA also, where the current instance is located.
 }
 {
-	\imagefigdual
+	\imagefigsinglebox
 	{lb-missing_subnet}
-	{In the Load Balancers configuration page, select the ELB}
-	{lb-subnet_added}
-	{Add PublicSubnetA to the load balancers available subnets}
+	{In the Load Balancers configuration page, select the load balancer and then the 'Instances' tab. Note that only the eu-west-1b zone is available to the load balancer, which has no instances}
+	
+	\imagefigsinglebox
+		{lb-subnet_added}
+	{Add 'PublicSubnetA' to the load balancers available subnets. This means that the load balancer can now direct traffic to the instance in eu-west-1a}
 }
 
 \FloatBarrier
@@ -61,11 +64,12 @@ The current implementation cannot be accessed from external networks. The servic
 Allow all addresses to access the load balancer on port 80
 }
 {
-	\imagefigdual
+	\imagefigsinglebox
 	{sg-elb_no_rules_full}
- 	{ Navigate to Services  $\rightarrow$ EC2  $\rightarrow$ Security Groups. Select the ELBSecurityGroup group and the 'Inbound' tab}
+ 	{ Navigate to Services  $\rightarrow$ EC2  $\rightarrow$ Security Groups. Select the ELBSecurityGroup group and the 'Inbound' tab. By default, no inbound rules are set.}
+	\imagefigsinglebox
 	{sg-elb_external_access}
-	{Edit the group and add an inbound rule to allow http access from everywhere, $0.0.0.0/0$}
+	{Edit the group and add an inbound rule to allow http access from everywhere, $0.0.0.0/0$. Users will now be able to reach the load balancer from the internet and other external networks.}
 }
 
 
@@ -77,12 +81,24 @@ Allow all addresses to access the load balancer on port 80
 {This change allows traffic from the ELB to the instances. This is set to all TCP traffic to port 80 to allow the ELBs TCP-based healthcheck to pass}
 {
 {
-	\imagefigdual
+	\imagefigsinglebox
 	{sg-app_no_rules_full}
-	{Select the AppServerSecurityGroup group and the 'Inbound' tab}
+	{Still in the 'Security Groups' section, select the 'AppServerSecurityGroup' group and the 'Inbound' tab. As we can see, there are no rules set.}
+	\imagefigsinglebox
 	{sg-allow_instance_access_from_elb}
-	{Edit the group and add an inbound rule to allow http access from the ELBSecurityGroup}
+	{Edit the group and add an inbound rule to allow http access from the ELBSecurityGroup. The security group Id needed for the 'Source' value can be found by typing 'sg' then choosing from one of the values in the popup menu.}
 }
 }
+
+\FloatBarrier
+
+\subsection{Success!}
+
+You should see the site on your loadbalancers domain name \texttt{http://<load-balancer-dns-name>/demo.html}. The right DNS name can be found on the 'Description' tab of the 'Load balancers' configuration page when your load balancer is selected.
+
+\imagefigsinglebox{lb-dns_name}{The DNS name of the load balancer can be found in the load balancers description tab}
+
+
+\imagefigsinglebox{site-success}{The instances are now reachable through the load-balancer to customers on the internet}
 
 \FloatBarrier

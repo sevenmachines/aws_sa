@@ -133,28 +133,7 @@ Resources:
           - Key: Name
             Value: !Join ['-', [PrivateRoute, !Ref 'CandidateName']]
 
-    SAelb:
-      Type: AWS::ElasticLoadBalancing::LoadBalancer
-      Properties:
-        Subnets: [!Ref 'PublicSubnetA', !Ref 'PublicSubnetB']
-        SecurityGroups: [!Ref 'SASGELB']
-        Listeners:
-        - LoadBalancerPort: '80'
-          InstancePort: '80'
-          Protocol: HTTP
-        HealthCheck:
-          HealthyThreshold: '2'
-          Interval: '15'
-          Target: TCP:80
-          Timeout: '5'
-          UnhealthyThreshold: '2'
-        Tags:
-          - Key: environment
-            Value: sa-assignment
-          - Key: Name
-            Value: !Join ['-', [ELB, !Ref 'CandidateName']]
-
-    SASGELB:
+    SASGALB:
       Type: AWS::EC2::SecurityGroup
       Properties:
         GroupDescription: SA Assignment - ELB security group
@@ -179,7 +158,7 @@ Resources:
         VpcId: !Ref 'SAVPC'
         SecurityGroupIngress:
           - Description: 'Restrict access to instances to the ELB on port 80 only' 
-            SourceSecurityGroupId: !Ref 'SASGELB'
+            SourceSecurityGroupId: !Ref 'SASGALB'
             FromPort: 80
             ToPort: 80
             IpProtocol: tcp
@@ -270,6 +249,46 @@ Resources:
         GatewayId: !Ref 'SAIGW'
       DependsOn: SAIGW
 
+
+    # Set up an Application Load Balancer and target group.
+    AppServerLoadBalancer:
+      Type: 'AWS::ElasticLoadBalancingV2::LoadBalancer'
+      Properties:
+        Scheme: internet-facing
+        Subnets: [!Ref PublicSubnetA, !Ref PublicSubnetB]
+        SecurityGroups: [!Ref 'SASGALB']
+        Tags:
+          - Key: environment
+            Value: sa-assignment
+          - Key: Name
+            Value: !Join ['-', [ELB, !Ref 'CandidateName']]
+        
+    AppServerTargetGroup:
+      Type: 'AWS::ElasticLoadBalancingV2::TargetGroup'
+      Properties:
+        Port: 80
+        Protocol: HTTP
+        VpcId: !Ref SAVPC
+        HealthCheckEnabled: true
+        HealthCheckPath: /demo.html
+        HealthCheckPort: 80
+        TargetType: instance
+        HealthCheckProtocol: HTTP
+        HealthCheckIntervalSeconds: 15
+        HealthCheckTimeoutSeconds: 3
+        HealthyThresholdCount: 2
+        UnhealthyThresholdCount: 2
+
+    AppServerListener:
+      Type: 'AWS::ElasticLoadBalancingV2::Listener'
+      Properties:
+        DefaultActions:
+          - Type: forward
+            TargetGroupArn: !Ref AppServerTargetGroup
+        LoadBalancerArn: !Ref AppServerLoadBalancer
+        Port: '80'
+        Protocol: HTTP
+  
     # The auto-scaling group for the application uses the load-balancers health check
     # rather than a simple EC2 one. A grace period is put in place to allow the ELB check
     # to become healthy before the ASG takes notice of it. 
@@ -282,7 +301,7 @@ Resources:
         HealthCheckGracePeriod: '120'
         HealthCheckType: 'ELB'
         LaunchConfigurationName: !Ref 'ApplicationLaunchConfiguration'
-        LoadBalancerNames: [!Ref 'SAelb']
+        TargetGroupARNs: [!Ref AppServerTargetGroup]
         MaxSize: 5
         MinSize: 1
         Tags:
@@ -316,8 +335,9 @@ Resources:
           PredefinedMetricSpecification:
             PredefinedMetricType: ASGAverageCPUUtilization
           TargetValue: !Ref ScalingPolicyTargetValue
+
 Outputs:
 
   LoadBalancerDNSName:
     Description: The DNSName of the load balancer
-    Value: !GetAtt SAelb.DNSName
+    Value: !GetAtt AppServerLoadBalancer.DNSName

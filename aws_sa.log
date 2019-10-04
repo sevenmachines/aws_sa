@@ -1,48 +1,48 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.21)  3 OCT 2019 22:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.12.25)  4 OCT 2019 14:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **aws_sa.tex
 (./aws_sa.tex
-LaTeX2e <2018-04-01> patch level 2
-Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
-(/usr/local/texlive/2018/texmf-dist/tex/latex/base/article.cls
+LaTeX2e <2017-04-15>
+Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2018/texmf-dist/tex/latex/base/size10.clo
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
-\c@part=\count80
-\c@section=\count81
-\c@subsection=\count82
-\c@subsubsection=\count83
-\c@paragraph=\count84
-\c@subparagraph=\count85
-\c@figure=\count86
-\c@table=\count87
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/local/texlive/2018/texmf-dist/tex/latex/geometry/geometry.sty
-Package: geometry 2018/03/24 v5.7 Page Geometry
+(/usr/local/texlive/2017/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
 
-(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
 )
-(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ifvtex.sty
 Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-(/usr/local/texlive/2018/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+(/usr/local/texlive/2017/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\Gm@cnth=\count88
-\Gm@cntv=\count89
-\c@Gm@tempcnt=\count90
+\Gm@cnth=\count87
+\Gm@cntv=\count88
+\c@Gm@tempcnt=\count89
 \Gm@bindingoffset=\dimen103
 \Gm@wd@mp=\dimen104
 \Gm@odd@mp=\dimen105
@@ -54,24 +54,32 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@dimlist=\toks15
 )
 (./common/scripts.tex
-(/usr/local/texlive/2018/texmf-dist/tex/latex/enumitem/enumitem.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \labelindent=\skip43
 \enit@outerparindent=\dimen111
 \enit@toks=\toks16
 \enit@inbox=\box26
-\enitdp@description=\count91
+\enitdp@description=\count90
 )
-(/usr/local/texlive/2018/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 
-(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count91
 )
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
@@ -83,25 +91,19 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-(/usr/local/texlive/2018/texmf-dist/tex/latex/mdframed/mdframed.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/mdframed/mdframed.sty
 Package: mdframed 2013/07/01 1.9b: mdframed
 
-(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 
-(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
-)
-(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 
-(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
-)
-(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/etexcmds.sty
 Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 
-(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ifluatex.sty
 Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
@@ -110,24 +112,23 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )))
-(/usr/local/texlive/2018/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
-(/usr/local/texlive/2018/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2018/03/05 L3 programming layer (loader) 
+(/usr/local/texlive/2017/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2017/05/13 L3 programming layer (loader) 
 
-(/usr/local/texlive/2018/texmf-dist/tex/latex/l3kernel/expl3-code.tex
-Package: expl3 2018/03/05 L3 programming layer (code)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/l3kernel/expl3-code.tex
+Package: expl3 2017/05/13 L3 programming layer (code)
 \c_max_int=\count92
 \l_tmpa_int=\count93
 \l_tmpb_int=\count94
 \g_tmpa_int=\count95
 \g_tmpb_int=\count96
-\g__intarray_font_int=\count97
-\g__prg_map_int=\count98
-\c_log_iow=\count99
-\l_iow_line_count_int=\count100
-\l__iow_line_target_int=\count101
-\l__iow_one_indent_int=\count102
-\l__iow_indent_int=\count103
+\g__prg_map_int=\count97
+\c_log_iow=\count98
+\l_iow_line_count_int=\count99
+\l__iow_line_target_int=\count100
+\l__iow_one_indent_int=\count101
+\l__iow_indent_int=\count102
 \c_zero_dim=\dimen112
 \c_max_dim=\dimen113
 \l_tmpa_dim=\dimen114
@@ -146,77 +147,30 @@ Package: expl3 2018/03/05 L3 programming layer (code)
 \l_tmpb_muskip=\muskip13
 \g_tmpa_muskip=\muskip14
 \g_tmpb_muskip=\muskip15
-\l_keys_choice_int=\count104
-\c__fp_leading_shift_int=\count105
-\c__fp_middle_shift_int=\count106
-\c__fp_trailing_shift_int=\count107
-\c__fp_big_leading_shift_int=\count108
-\c__fp_big_middle_shift_int=\count109
-\c__fp_big_trailing_shift_int=\count110
-\c__fp_Bigg_leading_shift_int=\count111
-\c__fp_Bigg_middle_shift_int=\count112
-\c__fp_Bigg_trailing_shift_int=\count113
-\c__fp_rand_size_int=\count114
-\c__fp_rand_four_int=\count115
-\c__fp_rand_eight_int=\count116
-\l__sort_length_int=\count117
-\l__sort_min_int=\count118
-\l__sort_top_int=\count119
-\l__sort_max_int=\count120
-\l__sort_true_max_int=\count121
-\l__sort_block_int=\count122
-\l__sort_begin_int=\count123
-\l__sort_end_int=\count124
-\l__sort_A_int=\count125
-\l__sort_B_int=\count126
-\l__sort_C_int=\count127
-\l__tl_build_start_index_int=\count128
-\l__tl_build_index_int=\count129
-\l__tl_analysis_normal_int=\count130
-\l__tl_analysis_index_int=\count131
-\l__tl_analysis_nesting_int=\count132
-\l__tl_analysis_type_int=\count133
-\l__regex_internal_a_int=\count134
-\l__regex_internal_b_int=\count135
-\l__regex_internal_c_int=\count136
-\l__regex_balance_int=\count137
-\l__regex_group_level_int=\count138
-\l__regex_mode_int=\count139
-\c__regex_cs_in_class_mode_int=\count140
-\c__regex_cs_mode_int=\count141
-\l__regex_catcodes_int=\count142
-\l__regex_default_catcodes_int=\count143
-\c__regex_catcode_D_int=\count144
-\c__regex_catcode_S_int=\count145
-\c__regex_catcode_L_int=\count146
-\c__regex_catcode_O_int=\count147
-\c__regex_catcode_A_int=\count148
-\c__regex_all_catcodes_int=\count149
-\l__regex_show_lines_int=\count150
-\l__regex_min_state_int=\count151
-\l__regex_max_state_int=\count152
-\l__regex_left_state_int=\count153
-\l__regex_right_state_int=\count154
-\l__regex_capturing_group_int=\count155
-\l__regex_min_pos_int=\count156
-\l__regex_max_pos_int=\count157
-\l__regex_curr_pos_int=\count158
-\l__regex_start_pos_int=\count159
-\l__regex_success_pos_int=\count160
-\l__regex_curr_char_int=\count161
-\l__regex_curr_catcode_int=\count162
-\l__regex_last_char_int=\count163
-\l__regex_case_changed_char_int=\count164
-\l__regex_curr_state_int=\count165
-\l__regex_step_int=\count166
-\l__regex_min_active_int=\count167
-\l__regex_max_active_int=\count168
-\l__regex_replacement_csnames_int=\count169
-\l__regex_match_count_int=\count170
-\l__regex_min_submatch_int=\count171
-\l__regex_submatch_int=\count172
-\l__regex_zeroth_submatch_int=\count173
-\g__regex_trace_regex_int=\count174
+\l_keys_choice_int=\count103
+\c__fp_leading_shift_int=\count104
+\c__fp_middle_shift_int=\count105
+\c__fp_trailing_shift_int=\count106
+\c__fp_big_leading_shift_int=\count107
+\c__fp_big_middle_shift_int=\count108
+\c__fp_big_trailing_shift_int=\count109
+\c__fp_Bigg_leading_shift_int=\count110
+\c__fp_Bigg_middle_shift_int=\count111
+\c__fp_Bigg_trailing_shift_int=\count112
+\c__fp_rand_size_int=\count113
+\c__fp_rand_four_int=\count114
+\c__fp_rand_eight_int=\count115
+\l__sort_length_int=\count116
+\l__sort_min_int=\count117
+\l__sort_top_int=\count118
+\l__sort_max_int=\count119
+\l__sort_true_max_int=\count120
+\l__sort_block_int=\count121
+\l__sort_begin_int=\count122
+\l__sort_end_int=\count123
+\l__sort_A_int=\count124
+\l__sort_B_int=\count125
+\l__sort_C_int=\count126
 \c_empty_box=\box27
 \l_tmpa_box=\box28
 \l_tmpb_box=\box29
@@ -258,56 +212,57 @@ Package: expl3 2018/03/05 L3 programming layer (code)
 \l__coffin_scaled_total_height_dim=\dimen141
 \l__coffin_scaled_width_dim=\dimen142
 )
-(/usr/local/texlive/2018/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
+(/usr/local/texlive/2017/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
 File: l3pdfmode.def 2017/03/18 v L3 Experimental driver: PDF mode
-\l__driver_color_stack_int=\count175
+\l__driver_color_stack_int=\count127
+\l__driver_tmp_box=\box42
 ))
-Package: xparse 2018/02/21 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count176
-\g__xparse_grabber_int=\count177
-\l__xparse_m_args_int=\count178
-\l__xparse_mandatory_args_int=\count179
-\l__xparse_v_nesting_int=\count180
+Package: xparse 2017/05/13 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count128
+\g__xparse_grabber_int=\count129
+\l__xparse_m_args_int=\count130
+\l__xparse_mandatory_args_int=\count131
+\l__xparse_v_nesting_int=\count132
 )
-(/usr/local/texlive/2018/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count181
+(/usr/local/texlive/2017/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2017/01/02 v2.4 e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count133
 )
-(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/zref-abspage.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/zref-abspage.sty
 Package: zref-abspage 2016/05/21 v2.26 Module abspage for zref (HO)
 
-(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/zref-base.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/zref-base.sty
 Package: zref-base 2016/05/21 v2.26 Module base for zref (HO)
 
-(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
 )
-(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2018/01/30 v0.27 Utility functions of pdfTeX for LuaTeX (HO
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/auxhook.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/auxhook.sty
 Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 )
 Package zref Info: New property list: main on input line 759.
 Package zref Info: New property: default on input line 760.
 Package zref Info: New property: page on input line 761.
 )
-(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/atbegshi.sty
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/atbegshi.sty
 Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
 )
-\c@abspage=\count182
+\c@abspage=\count134
 Package zref Info: New property: abspage on input line 62.
 )
-(/usr/local/texlive/2018/texmf-dist/tex/latex/needspace/needspace.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/needspace/needspace.sty
 Package: needspace 2010/09/12 v1.3d reserve vertical space
 )
 \mdf@templength=\skip50
-\c@mdf@globalstyle@cnt=\count183
+\c@mdf@globalstyle@cnt=\count135
 \mdf@skipabove@length=\skip51
 \mdf@skipbelow@length=\skip52
 \mdf@leftmargin@length=\skip53
@@ -348,14 +303,14 @@ Package: needspace 2010/09/12 v1.3d reserve vertical space
 \mdf@subsubtitleinneraboveskip@length=\skip88
 \mdf@subsubtitleinnerbelowskip@length=\skip89
 
-(/usr/local/texlive/2018/texmf-dist/tex/latex/mdframed/md-frame-0.mdf
+(/usr/local/texlive/2017/texmf-dist/tex/latex/mdframed/md-frame-0.mdf
 File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 )
-\mdf@frametitlebox=\box42
-\mdf@footnotebox=\box43
-\mdf@splitbox@one=\box44
-\mdf@splitbox@two=\box45
-\mdf@splitbox@save=\box46
+\mdf@frametitlebox=\box43
+\mdf@footnotebox=\box44
+\mdf@splitbox@one=\box45
+\mdf@splitbox@two=\box46
+\mdf@splitbox@save=\box47
 \mdfsplitboxwidth=\skip90
 \mdfsplitboxtotalwidth=\skip91
 \mdfsplitboxheight=\skip92
@@ -383,7 +338,7 @@ File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 \mdf@horizontalspaceofbox=\skip114
 \mdfsubtitleheight=\skip115
 \mdfsubsubtitleheight=\skip116
-\c@mdfcountframes=\count184
+\c@mdfcountframes=\count136
 
 ****** mdframed patching \endmdf@trivlist
 
@@ -399,22 +354,22 @@ File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 . 
 . Defining command \mdtheorem with sig. ' O{} m o m o ' on line 701.
 .................................................
-\mdf@envdepth=\count185
-\c@mdf@env@i=\count186
-\c@mdf@env@ii=\count187
-\c@mdf@zref@counter=\count188
+\mdf@envdepth=\count137
+\c@mdf@env@i=\count138
+\c@mdf@env@ii=\count139
+\c@mdf@zref@counter=\count140
 Package zref Info: New property: mdf@pagevalue on input line 895.
 )
-(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/04/14 v1.1b Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/trig.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 99.
@@ -422,10 +377,10 @@ Package graphics Info: Driver file: pdftex.def on input line 99.
 \Gin@req@height=\dimen143
 \Gin@req@width=\dimen144
 )
-(/usr/local/texlive/2018/texmf-dist/tex/latex/caption/caption.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 
-(/usr/local/texlive/2018/texmf-dist/tex/latex/caption/caption3.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
 \captionmargin=\dimen145
@@ -436,30 +391,28 @@ Package caption3 Info: TeX engine: e-TeX on input line 67.
 \caption@parindent=\dimen150
 \caption@hangindent=\dimen151
 )
-\c@ContinuedFloat=\count189
+\c@ContinuedFloat=\count141
 )
-(/usr/local/texlive/2018/texmf-dist/tex/latex/placeins/placeins.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/placeins/placeins.sty
 Package: placeins 2005/04/18  v 2.2
 )
-(/usr/local/texlive/2018/texmf-dist/tex/latex/tools/tabularx.sty
-Package: tabularx 2016/02/03 v2.11b `tabularx' package (DPC)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2016/02/03 v2.11 `tabularx' package (DPC)
 
-(/usr/local/texlive/2018/texmf-dist/tex/latex/tools/array.sty
-Package: array 2018/04/07 v2.4g Tabular extension package (FMi)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/tools/array.sty
+Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
 \col@sep=\dimen152
-\ar@mcellbox=\box47
 \extrarowheight=\dimen153
 \NC@list=\toks17
 \extratabsurround=\skip117
 \backup@length=\skip118
-\ar@cellbox=\box48
 )
 \TX@col@width=\dimen154
 \TX@old@table=\dimen155
 \TX@old@col=\dimen156
 \TX@target=\dimen157
 \TX@delta=\dimen158
-\TX@cols=\count190
+\TX@cols=\count142
 \TX@ftn=\toks18
 ))
 
@@ -516,37 +469,37 @@ LaTeX Font Info:    ... okay on input line 9.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+(/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count191
+\scratchcounter=\count143
 \scratchdimen=\dimen159
-\scratchbox=\box49
-\nofMPsegments=\count192
-\nofMParguments=\count193
+\scratchbox=\box48
+\nofMPsegments=\count144
+\nofMParguments=\count145
 \everyMPshowfont=\toks19
-\MPscratchCnt=\count194
+\MPscratchCnt=\count146
 \MPscratchDim=\dimen160
-\MPnumerator=\count195
-\makeMPintoPDFobject=\count196
+\MPnumerator=\count147
+\makeMPintoPDFobject=\count148
 \everyMPtoPDFconversion=\toks20
-) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/grfext.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/grfext.sty
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 )
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 38.
 Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 
-(/usr/local/texlive/2018/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+(/usr/local/texlive/2017/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\AtBeginShipoutBox=\box50
+\AtBeginShipoutBox=\box49
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -558,11 +511,11 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 [1
 
-{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 (./problem_analysis.tex
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 17.
 
-(/usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
@@ -571,99 +524,164 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 17.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 17.
-<images/aws_sa_v0_simple.png, id=8, 835.12pt x 699.61375pt>
-File: images/aws_sa_v0_simple.png Graphic file (type png)
-<use images/aws_sa_v0_simple.png>
-Package pdftex.def Info: images/aws_sa_v0_simple.png  used on input line 21.
-(pdftex.def)             Requested size: 422.77664pt x 354.18286pt.
-<images/lb-healthcheck_443.png, id=10, 755.82375pt x 502.87875pt>
-File: images/lb-healthcheck_443.png Graphic file (type png)
-<use images/lb-healthcheck_443.png>
-Package pdftex.def Info: images/lb-healthcheck_443.png  used on input line 37.
-(pdftex.def)             Requested size: 230.18253pt x 153.14375pt.
-<images/lb-healthcheck_80.png, id=11, 749.80125pt x 502.87875pt>
-File: images/lb-healthcheck_80.png Graphic file (type png)
-<use images/lb-healthcheck_80.png>
-Package pdftex.def Info: images/lb-healthcheck_80.png  used on input line 37.
-(pdftex.def)             Requested size: 230.18253pt x 154.37915pt.
-<images/lb-missing_subnet.png, id=12, 953.5625pt x 433.62pt>
-File: images/lb-missing_subnet.png Graphic file (type png)
-<use images/lb-missing_subnet.png>
-Package pdftex.def Info: images/lb-missing_subnet.png  used on input line 54.
-(pdftex.def)             Requested size: 230.18253pt x 104.67302pt.
-<images/lb-subnet_added.png, id=13, 747.79375pt x 480.79625pt>
-File: images/lb-subnet_added.png Graphic file (type png)
-<use images/lb-subnet_added.png>
-Package pdftex.def Info: images/lb-subnet_added.png  used on input line 54.
-(pdftex.def)             Requested size: 230.18253pt x 147.99619pt.
- [1 <./images/aws_sa_v0_simple.png> <./images/lb-healthcheck_443.png> <./images
-/lb-healthcheck_80.png>]
-<images/sg-elb_no_rules_full.png, id=25, 1065.9825pt x 620.3175pt>
-File: images/sg-elb_no_rules_full.png Graphic file (type png)
-<use images/sg-elb_no_rules_full.png>
-Package pdftex.def Info: images/sg-elb_no_rules_full.png  used on input line 69
-.
-(pdftex.def)             Requested size: 230.18253pt x 133.94304pt.
-<images/sg-elb_external_access.png, id=26, 1133.23375pt x 317.185pt>
-File: images/sg-elb_external_access.png Graphic file (type png)
-<use images/sg-elb_external_access.png>
-Package pdftex.def Info: images/sg-elb_external_access.png  used on input line 
-69.
-(pdftex.def)             Requested size: 230.18253pt x 64.42319pt.
-<images/sg-app_no_rules_full.png, id=27, 719.68875pt x 444.66125pt>
-File: images/sg-app_no_rules_full.png Graphic file (type png)
-<use images/sg-app_no_rules_full.png>
-Package pdftex.def Info: images/sg-app_no_rules_full.png  used on input line 86
-.
-(pdftex.def)             Requested size: 230.18253pt x 142.21986pt.
-<images/sg-allow_instance_access_from_elb.png, id=28, 1097.09875pt x 309.155pt>
 
-File: images/sg-allow_instance_access_from_elb.png Graphic file (type png)
-<use images/sg-allow_instance_access_from_elb.png>
-Package pdftex.def Info: images/sg-allow_instance_access_from_elb.png  used on 
-input line 86.
-(pdftex.def)             Requested size: 230.18253pt x 64.86313pt.
-) (./solution_enhancement.tex
-<images/aws_sa_v1_simple.png, id=29, 805.0075pt x 698.61pt>
-File: images/aws_sa_v1_simple.png Graphic file (type png)
-<use images/aws_sa_v1_simple.png>
-Package pdftex.def Info: images/aws_sa_v1_simple.png  used on input line 5.
-(pdftex.def)             Requested size: 422.77664pt x 366.893pt.
+<images/aws_sa_v0_simple.png, id=8, 803.0pt x 602.25pt>
+File: images/aws_sa_v0_simple.png Graphic file (type png)
+
+<use images/aws_sa_v0_simple.png>
+Package pdftex.def Info: images/aws_sa_v0_simple.png used on input line 21.
+(pdftex.def)             Requested size: 422.77664pt x 317.08656pt.
+
+<images/lb-healthcheck_443.png, id=10, 401.5pt x 301.125pt>
+File: images/lb-healthcheck_443.png Graphic file (type png)
+
+<use images/lb-healthcheck_443.png>
+Package pdftex.def Info: images/lb-healthcheck_443.png used on input line 38.
+(pdftex.def)             Requested size: 422.77664pt x 317.10493pt.
+
+<images/lb-healthcheck_80.png, id=11, 803.0pt x 602.25pt>
+File: images/lb-healthcheck_80.png Graphic file (type png)
+
+<use images/lb-healthcheck_80.png>
+Package pdftex.def Info: images/lb-healthcheck_80.png used on input line 38.
+(pdftex.def)             Requested size: 422.77664pt x 317.08656pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[2 <./images/lb-missing_subnet.png> <./images/lb-subnet_added.png> <./images/sg
--elb_no_rules_full.png> <./images/sg-elb_external_access.png> <./images/sg-app_
-no_rules_full.png> <./images/sg-allow_instance_access_from_elb.png>])
-(./future_solutions.tex [3 <./images/aws_sa_v1_simple.png>]
-<images/aws_sa_v2_simple.png, id=44, 1112.155pt x 706.64pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[1 <./images/aws_sa_v0_simple.png>]
+<images/lb-missing_subnet.png, id=21, 401.5pt x 301.125pt>
+File: images/lb-missing_subnet.png Graphic file (type png)
+
+<use images/lb-missing_subnet.png>
+Package pdftex.def Info: images/lb-missing_subnet.png used on input line 57.
+(pdftex.def)             Requested size: 422.77664pt x 317.10493pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/lb-subnet_added.png, id=22, 803.0pt x 602.25pt>
+File: images/lb-subnet_added.png Graphic file (type png)
+
+<use images/lb-subnet_added.png>
+Package pdftex.def Info: images/lb-subnet_added.png used on input line 57.
+(pdftex.def)             Requested size: 422.77664pt x 317.08656pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[2 <./images/lb-healthcheck_443.png> <./images/lb-healthcheck_80.png>]
+<images/sg-elb_no_rules_full.png, id=28, 401.5pt x 301.125pt>
+File: images/sg-elb_no_rules_full.png Graphic file (type png)
+
+<use images/sg-elb_no_rules_full.png>
+Package pdftex.def Info: images/sg-elb_no_rules_full.png used on input line 73.
+
+(pdftex.def)             Requested size: 422.77664pt x 317.10493pt.
+
+<images/sg-elb_external_access.png, id=29, 794.97pt x 301.125pt>
+File: images/sg-elb_external_access.png Graphic file (type png)
+
+<use images/sg-elb_external_access.png>
+Package pdftex.def Info: images/sg-elb_external_access.png used on input line 7
+3.
+(pdftex.def)             Requested size: 422.77664pt x 160.14685pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[3 <./images/lb-missing_subnet.png> <./images/lb-subnet_added.png>]
+<images/sg-app_no_rules_full.png, id=35, 401.5pt x 301.125pt>
+File: images/sg-app_no_rules_full.png Graphic file (type png)
+
+<use images/sg-app_no_rules_full.png>
+Package pdftex.def Info: images/sg-app_no_rules_full.png used on input line 91.
+
+(pdftex.def)             Requested size: 422.77664pt x 317.10493pt.
+
+<images/sg-allow_instance_access_from_elb.png, id=36, 799.98875pt x 300.12125pt
+>
+File: images/sg-allow_instance_access_from_elb.png Graphic file (type png)
+ <use images/sg-allow_instance_access_from_elb.png>
+Package pdftex.def Info: images/sg-allow_instance_access_from_elb.png used on i
+nput line 91.
+(pdftex.def)             Requested size: 422.77664pt x 158.61012pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[4 <./images/sg-elb_no_rules_full.png> <./images/sg-elb_external_access.png>]
+Overfull \hbox (2.43799pt too wide) in paragraph at lines 97--98
+\OT1/cmr/m/n/10 You should see the site on your load-bal-ancers do-main name \O
+T1/cmtt/m/n/10 http://<load-balancer-dns-name>/demo.html\OT1/cmr/m/n/10 .
+ []
+
+<images/lb-dns_name.png, id=42, 924.45375pt x 271.0125pt>
+File: images/lb-dns_name.png Graphic file (type png)
+
+<use images/lb-dns_name.png>
+Package pdftex.def Info: images/lb-dns_name.png used on input line 99.
+(pdftex.def)             Requested size: 422.77664pt x 123.93944pt.
+
+<images/site-success.png, id=43, 911.405pt x 457.71pt>
+File: images/site-success.png Graphic file (type png)
+
+<use images/site-success.png>
+Package pdftex.def Info: images/site-success.png used on input line 102.
+(pdftex.def)             Requested size: 422.77664pt x 212.32312pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[5 <./images/sg-app_no_rules_full.png> <./images/sg-allow_instance_access_from_
+elb.png> <./images/lb-dns_name.png>]) (./solution_enhancement.tex
+<images/aws_sa_v1_simple.png, id=51, 803.0pt x 602.25pt>
+File: images/aws_sa_v1_simple.png Graphic file (type png)
+
+<use images/aws_sa_v1_simple.png>
+Package pdftex.def Info: images/aws_sa_v1_simple.png used on input line 5.
+(pdftex.def)             Requested size: 422.77664pt x 317.08656pt.
+ [6 <./images/site-success.png> <./images/aws_sa_v1_simple.png>]) (./future_sol
+utions.tex
+<images/aws_sa_v2_simple.png, id=59, 803.0pt x 602.25pt>
 File: images/aws_sa_v2_simple.png Graphic file (type png)
+
 <use images/aws_sa_v2_simple.png>
-Package pdftex.def Info: images/aws_sa_v2_simple.png  used on input line 5.
-(pdftex.def)             Requested size: 422.77664pt x 268.62303pt.
-) [4 <./images/aws_sa_v2_simple.png>] (./aws_sa.aux) ) 
+Package pdftex.def Info: images/aws_sa_v2_simple.png used on input line 5.
+(pdftex.def)             Requested size: 422.77664pt x 317.08656pt.
+) [7 <./images/aws_sa_v2_simple.png>]
+(./aws_sa.aux) ) 
 Here is how much of TeX's memory you used:
- 13396 strings out of 492649
- 255324 string characters out of 6129622
- 321508 words of memory out of 5000000
- 17175 multiletter control sequences out of 15000+600000
- 534873 words of font info for 37 fonts, out of 8000000 for 9000
+ 12503 strings out of 492995
+ 233327 string characters out of 6132703
+ 291988 words of memory out of 5000000
+ 15949 multiletter control sequences out of 15000+600000
+ 8409 words of font info for 30 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,9n,49p,10418b,379s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2018/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2018/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2018/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2018/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2018/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2018/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on aws_sa.pdf (5 pages, 1173891 bytes).
+ 41i,9n,45p,10418b,332s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+17.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
+0.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10
+.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.
+pfb>
+Output written on aws_sa.pdf (8 pages, 1344584 bytes).
 PDF statistics:
- 75 PDF objects out of 1000 (max. 8388607)
- 37 compressed objects within 1 object stream
+ 94 PDF objects out of 1000 (max. 8388607)
+ 48 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 66 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -58,10 +58,10 @@
 }
 
 \newcommand{\issue}[4]{
-	\noindent{\subsection{#1}} 
-	\noindent\textbf{Resolution: }#2  \\
-	\noindent\textbf{Detail: }#3
-	\ifx&#4&%
+\noindent{\subsection{#1}} 
+	\noindent \paragraph{Summary: }#3 
+%	\noindent\paragraph{Resolution: }#2
+		\ifx&#4&%
 	\else
 	#4	
 	\fi
@@ -100,6 +100,17 @@
 	\end{figure}
 }
 
+\newcommand{\imagefigsinglebox}[2]{
+	\begin{figure}[!h]
+		\centering
+		\fcolorbox{white}{gray}{
+			\includegraphics[width=0.9\linewidth]{images/#1}
+		}
+		\captionsetup{labelfont=bf,singlelinecheck=on}
+		\caption{#2}
+		\label{fig:#1}
+	\end{figure}
+}
 \newcommand{\imagefigdual}[4]{
 	\ifx&#3&%
 	\begin{figure}[!h]
