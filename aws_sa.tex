@@ -2,15 +2,25 @@
 
 \usepackage[legalpaper, portrait, margin=1in]{geometry}
 
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+
+\usepackage{mathpazo} % Palatino font
+
 \input{common/scripts}
-\title{AWS Solution Architect \\ Service unavailable report}
-\author{Niall Creech}
 
 \begin{document}
 
+\input{titlepage}
 \maketitle
+\tableofcontents
 
+\newpage
 \input{problem_analysis}
 \input{solution_enhancement}
 \input{future_solutions}
+\newpage
+\begin{appendix}
+\input{references}
+\end{appendix}
 \end{document}
