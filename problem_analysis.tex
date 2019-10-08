@@ -2,31 +2,35 @@
 
 \head{Solution analysis}
 
-The current implementation cannot be accessed from external networks. The service consists of,
+The current implementation cannot be accessed from external networks. Here we will go through the current setup, look at the issues that are preventing successful access by customers, and provide minimum changes to return the site to working health.
 
-\items{
-	\item Networking is a VPC with CIDR $10.0.0.0/16$ with 2 public subnets $10.0.0.0/24$ and  $10.0.1.0/24$ in eu-west-1b and eu-west-1b respectively, as well as 2 private subnets $10.0.2.0/24$, $10.0.3.0/24$ in eu-west-1b and eu-west-1b. 
+\architecture
+{aws_sa_v0_simple}
+{Architecture diagram of the current site}
+	\FloatBarrier
 	
+\changes
+{Summary of the setup of the initial solution (Figure \ref{fig:aws_sa_v0_simple})}
+{
+	\item Networking is a VPC with CIDR $10.0.0.0/16$ with 2 public subnets $10.0.0.0/24$ and  $10.0.1.0/24$ in eu-west-1b and eu-west-1b respectively, as well as 2 private subnets $10.0.2.0/24$, $10.0.3.0/24$ in eu-west-1b and eu-west-1b. 
+
 	\item VPC has an internet gateway and a classic load balancer (ELB)
-	 
+	
 	\item Routing is setup up to allow all traffic between subnets and out to external addresses.
 	
 	\item There are 2 security groups, one for the single EC2 application instance, and one for the ELB.
-	 
+	
 	\item DNS is enabled and the instance has a pubic IP address
 }
 
-\imagefigsingle
-{aws_sa_v0_simple}
-{My explanation}
 
-\FloatBarrier
+\subhead{Troubleshooting}
 
 \issue{ELB healthcheck on wrong instance port}
 {Change ELB port for healthcheck from 443 to 80}
 {
-	Httpd starts on-instance on port 80. The ELB correctly forwards ports
-	from from 80 to instance port 80.  However, the healthcheck looks to verify instance health on port 443 through a tcp connection. This change simply targets the healthcheck correctly at port 80 on the instance.
+	The EC2 instance runs a user-data script that installs and starts \texttt{Httpd} on port $80$. The Elastic load balancer (ELB) correctly forwards ports
+	from from 80 to instance port $80$. However, the load balancers healthcheck looks to verify instance health on port 443 through a tcp connection. See 	\url{https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-troubleshooting.html}.
 }
 {
 	\imagefigsinglebox
@@ -36,24 +40,23 @@ The current implementation cannot be accessed from external networks. The servic
 	{lb-healthcheck_80}
 	{Change the port from $443$ to $80$. This will leave the load balancer checking the instance health by connecting through tcp on the servers default HTTP port.}
 }
-
 \FloatBarrier
 
 
 \issue{Load balancer cannot route to subnet}
 {Add PublicSubnetA to load balancer}
 {
-	The ELB can only route to instances in PublicSubnetB. This change
-	allows it to route to PublicSubnetA also, where the current instance is located.
+	The load balancer can only route to instances in \texttt{PublicSubnetB}. However, the instance running the application is in \texttt{PublicSubnetA} so the ELB cannot pass traffic to it.
 }
 {
+	By adding \texttt{PublicSubnetA} to the load balancers available subnets the instance can have traffic routed through to it.
 	\imagefigsinglebox
 	{lb-missing_subnet}
-	{In the Load Balancers configuration page, select the load balancer and then the 'Instances' tab. Note that only the eu-west-1b zone is available to the load balancer, which has no instances}
+	{In the Load Balancers configuration page, select the load balancer and then the 'Instances' tab. Note that only the \texttt{eu-west-1b} zone is available to the load balancer, which has no instances}
 	
 	\imagefigsinglebox
 		{lb-subnet_added}
-	{Add 'PublicSubnetA' to the load balancers available subnets. This means that the load balancer can now direct traffic to the instance in eu-west-1a}
+	{Add \texttt{PublicSubnetA} to the load balancers available subnets. This means that the load balancer can now direct traffic to the instance in \texttt{eu-west-1a}}
 }
 
 \FloatBarrier
@@ -61,12 +64,13 @@ The current implementation cannot be accessed from external networks. The servic
 \issue{The site cannot be accessed from external addresses}
 {Add everywhere access to load balancer ingress}
 {
-Allow all addresses to access the load balancer on port 80
+There are no inbound security group rules for the group \texttt{ELBSecurityGroup}, which means that the ELB will not route any traffic to the instance.
 }
 {
+	As we want the site to be accessible by everyone, we allow all addresses, by using the CIDR range $0.0.0.0/0$, to access the load balancer on port $80$.
 	\imagefigsinglebox
 	{sg-elb_no_rules_full}
- 	{ Navigate to Services  $\rightarrow$ EC2  $\rightarrow$ Security Groups. Select the ELBSecurityGroup group and the 'Inbound' tab. By default, no inbound rules are set.}
+ 	{ Navigate to Services  $\rightarrow$ EC2  $\rightarrow$ Security Groups. Select the \texttt{ELBSecurityGroup} group and the 'Inbound' tab. By default, no inbound rules are set.}
 	\imagefigsinglebox
 	{sg-elb_external_access}
 	{Edit the group and add an inbound rule to allow http access from everywhere, $0.0.0.0/0$. Users will now be able to reach the load balancer from the internet and other external networks.}
@@ -78,15 +82,17 @@ Allow all addresses to access the load balancer on port 80
 
 \issue{Instances cannot be accessed from the load balancer}
 {Allow access to the instance from the ELB only}
-{This change allows traffic from the ELB to the instances. This is set to all TCP traffic to port 80 to allow the ELBs TCP-based healthcheck to pass}
+{The current security group for the EC2 instances does not contain any inbound rules. This means that traffic from the load balancer is blocked}
 {
+ We can change the security group to allow traffic from the ELB to the instance by adding a rule to allow TCP traffic to port 80. This also allows the ELBs TCP-based healthcheck to pass
 {
+	
 	\imagefigsinglebox
 	{sg-app_no_rules_full}
-	{Still in the 'Security Groups' section, select the 'AppServerSecurityGroup' group and the 'Inbound' tab. As we can see, there are no rules set.}
+	{Still in the 'Security Groups' section, select the \texttt{AppServerSecurityGroup} group and the 'Inbound' tab. As we can see, there are no rules set.}
 	\imagefigsinglebox
 	{sg-allow_instance_access_from_elb}
-	{Edit the group and add an inbound rule to allow http access from the ELBSecurityGroup. The security group Id needed for the 'Source' value can be found by typing 'sg' then choosing from one of the values in the popup menu.}
+	{Edit the group and add an inbound rule to allow http access from the \texttt{ELBSecurityGroup}. The security group Id needed for the 'Source' value can be found by typing 'sg' then choosing from one of the values in the popup menu.}
 }
 }
 
@@ -94,7 +100,13 @@ Allow all addresses to access the load balancer on port 80
 
 \subhead{Success!}
 
-You should see the site on your loadbalancers domain name \texttt{http://<load-balancer-dns-name>/demo.html}. The right DNS name can be found on the 'Description' tab of the 'Load balancers' configuration page when your load balancer is selected.
+The DNS name for the site can be found on the 'Description' tab of the 'Load balancers' configuration page when your load balancer is selected.
+\newline
+\newline
+\url{http://<load-balancer-dns-name>/demo.html}
+\newline
+\newline
+
 
 \imagefigsinglebox{lb-dns_name}{The DNS name of the load balancer can be found in the load balancers description tab}
 

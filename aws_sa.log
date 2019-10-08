@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.21)  8 OCT 2019 11:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.21)  8 OCT 2019 12:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -489,19 +489,19 @@ LaTeX Warning: Unused global option(s):
 (./aws_sa.aux)
 \openout1 = `aws_sa.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Try loading font information for T1+ppl on input line 12.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Try loading font information for T1+ppl on input line 18.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
 )
@@ -581,31 +581,31 @@ LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <20.74> not available
 
 {/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 16.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 22.
  (./aws_sa.toc
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <10> not available
 (Font)              Font shape `T1/ppl/b/n' tried instead on input line 1.
-LaTeX Font Info:    Try loading font information for OT1+ppl on input line 2.
+LaTeX Font Info:    Try loading font information for OT1+ppl on input line 3.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
-LaTeX Font Info:    Try loading font information for OML+zplm on input line 2.
+LaTeX Font Info:    Try loading font information for OML+zplm on input line 3.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMS+zplm on input line 2.
+LaTeX Font Info:    Try loading font information for OMS+zplm on input line 3.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMX+zplm on input line 2.
+LaTeX Font Info:    Try loading font information for OMX+zplm on input line 3.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 2.
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 3.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
@@ -615,140 +615,142 @@ File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 
  [1]
 (./problem_analysis.tex
-LaTeX Font Info:    Try loading font information for OMS+ppl on input line 17.
-
-(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omsppl.fd
-File: omsppl.fd 
-)
-LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 17.
 <images/aws_sa_v0_simple.png, id=12, 803.0pt x 602.25pt>
 File: images/aws_sa_v0_simple.png Graphic file (type png)
 <use images/aws_sa_v0_simple.png>
-Package pdftex.def Info: images/aws_sa_v0_simple.png  used on input line 21.
+Package pdftex.def Info: images/aws_sa_v0_simple.png  used on input line 9.
 (pdftex.def)             Requested size: 407.66833pt x 305.7558pt.
+
+
+Package caption Warning: \label without proper reference on input line 9.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:aws_sa_v0_simple' on page 2 undefined on input li
+ne 24.
+
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 38.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 27.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 42.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
 <images/lb-healthcheck_443.png, id=14, 401.5pt x 301.125pt>
 File: images/lb-healthcheck_443.png Graphic file (type png)
 <use images/lb-healthcheck_443.png>
-Package pdftex.def Info: images/lb-healthcheck_443.png  used on input line 38.
+Package pdftex.def Info: images/lb-healthcheck_443.png  used on input line 42.
 (pdftex.def)             Requested size: 407.66833pt x 305.77417pt.
-<images/lb-healthcheck_80.png, id=15, 803.0pt x 602.25pt>
+ [2 <./images/aws_sa_v0_simple.png>]
+<images/lb-healthcheck_80.png, id=20, 803.0pt x 602.25pt>
 File: images/lb-healthcheck_80.png Graphic file (type png)
 <use images/lb-healthcheck_80.png>
-Package pdftex.def Info: images/lb-healthcheck_80.png  used on input line 38.
+Package pdftex.def Info: images/lb-healthcheck_80.png  used on input line 42.
 (pdftex.def)             Requested size: 407.66833pt x 305.7558pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[2 <./images/aws_sa_v0_simple.png>] [3 <./images/lb-healthcheck_443.png>]
-[4 <./images/lb-healthcheck_80.png>]
-<images/lb-missing_subnet.png, id=29, 401.5pt x 301.125pt>
+[3 <./images/lb-healthcheck_443.png>]
+<images/lb-missing_subnet.png, id=26, 401.5pt x 301.125pt>
 File: images/lb-missing_subnet.png Graphic file (type png)
 <use images/lb-missing_subnet.png>
-Package pdftex.def Info: images/lb-missing_subnet.png  used on input line 57.
+Package pdftex.def Info: images/lb-missing_subnet.png  used on input line 60.
 (pdftex.def)             Requested size: 407.66833pt x 305.77417pt.
-<images/lb-subnet_added.png, id=30, 803.0pt x 602.25pt>
-File: images/lb-subnet_added.png Graphic file (type png)
-<use images/lb-subnet_added.png>
-Package pdftex.def Info: images/lb-subnet_added.png  used on input line 57.
-(pdftex.def)             Requested size: 407.66833pt x 305.7558pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[5
+<images/lb-subnet_added.png, id=27, 803.0pt x 602.25pt>
+File: images/lb-subnet_added.png Graphic file (type png)
+<use images/lb-subnet_added.png>
+Package pdftex.def Info: images/lb-subnet_added.png  used on input line 60.
+(pdftex.def)             Requested size: 407.66833pt x 305.7558pt.
 
- <./images/lb-missing_subnet.png>]
-<images/sg-elb_no_rules_full.png, id=35, 401.5pt x 301.125pt>
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[4 <./images/lb-healthcheck_80.png>] [5 <./images/lb-missing_subnet.png>]
+[6 <./images/lb-subnet_added.png>]
+Overfull \hbox (3.48631pt too wide) in paragraph at lines 77--77
+ \T1/ppl/b/n/10 Sum-mary: [] \T1/ppl/m/n/12 There are no in-bound se-cu-rity gr
+oup rules for the group \T1/cmtt/m/n/12 ELBSecurityGroup\T1/ppl/m/n/12 ,
+ []
+
+<images/sg-elb_no_rules_full.png, id=42, 401.5pt x 301.125pt>
 File: images/sg-elb_no_rules_full.png Graphic file (type png)
 <use images/sg-elb_no_rules_full.png>
-Package pdftex.def Info: images/sg-elb_no_rules_full.png  used on input line 73
+Package pdftex.def Info: images/sg-elb_no_rules_full.png  used on input line 77
 .
 (pdftex.def)             Requested size: 407.66833pt x 305.77417pt.
-<images/sg-elb_external_access.png, id=36, 794.97pt x 301.125pt>
+<images/sg-elb_external_access.png, id=43, 794.97pt x 301.125pt>
 File: images/sg-elb_external_access.png Graphic file (type png)
 <use images/sg-elb_external_access.png>
 Package pdftex.def Info: images/sg-elb_external_access.png  used on input line 
-73.
+77.
 (pdftex.def)             Requested size: 407.66833pt x 154.42174pt.
+[7
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[6 <./images/lb-subnet_added.png>]
-<images/sg-app_no_rules_full.png, id=42, 401.5pt x 301.125pt>
+ <./images/sg-elb_no_rules_full.png> <./images/sg-elb_external_access.png>]
+<images/sg-app_no_rules_full.png, id=49, 401.5pt x 301.125pt>
 File: images/sg-app_no_rules_full.png Graphic file (type png)
 <use images/sg-app_no_rules_full.png>
-Package pdftex.def Info: images/sg-app_no_rules_full.png  used on input line 91
+Package pdftex.def Info: images/sg-app_no_rules_full.png  used on input line 97
 .
 (pdftex.def)             Requested size: 407.66833pt x 305.77417pt.
-<images/sg-allow_instance_access_from_elb.png, id=43, 799.98875pt x 300.12125pt
+<images/sg-allow_instance_access_from_elb.png, id=50, 799.98875pt x 300.12125pt
 >
 File: images/sg-allow_instance_access_from_elb.png Graphic file (type png)
 <use images/sg-allow_instance_access_from_elb.png>
 Package pdftex.def Info: images/sg-allow_instance_access_from_elb.png  used on 
-input line 91.
+input line 97.
 (pdftex.def)             Requested size: 407.66833pt x 152.94073pt.
 
+[8 <./images/sg-app_no_rules_full.png> <./images/sg-allow_instance_access_from_
+elb.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 103--109
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[7 <./images/sg-elb_no_rules_full.png> <./images/sg-elb_external_access.png>]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 97.
-
-(/usr/local/texlive/2018/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-Overfull \hbox (41.43698pt too wide) in paragraph at lines 97--98
-[]\T1/ppl/m/n/10 You should see the site on your load-bal-ancers do-main name \
-T1/cmtt/m/n/10 http://<load-balancer-dns-name>/demo.html\T1/ppl/m/n/10 .
  []
 
-<images/lb-dns_name.png, id=49, 924.45375pt x 271.0125pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--109
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--109
+
+ []
+
+<images/lb-dns_name.png, id=56, 924.45375pt x 271.0125pt>
 File: images/lb-dns_name.png Graphic file (type png)
 <use images/lb-dns_name.png>
-Package pdftex.def Info: images/lb-dns_name.png  used on input line 99.
+Package pdftex.def Info: images/lb-dns_name.png  used on input line 111.
 (pdftex.def)             Requested size: 407.66833pt x 119.51051pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<images/site-success.png, id=50, 911.405pt x 457.71pt>
+<images/site-success.png, id=57, 911.405pt x 457.71pt>
 File: images/site-success.png Graphic file (type png)
 <use images/site-success.png>
-Package pdftex.def Info: images/site-success.png  used on input line 102.
+Package pdftex.def Info: images/site-success.png  used on input line 114.
 (pdftex.def)             Requested size: 407.66833pt x 204.73141pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[8 <./images/sg-app_no_rules_full.png> <./images/sg-allow_instance_access_from_
-elb.png>]) (./solution_enhancement.tex
-<images/aws_sa_v1_simple.png, id=57, 805.0075pt x 769.87625pt>
+) [9 <./images/lb-dns_name.png> <./images/site-success.png>]
+(./solution_enhancement.tex
+<images/aws_sa_v1_simple.png, id=63, 805.0075pt x 769.87625pt>
 File: images/aws_sa_v1_simple.png Graphic file (type png)
 <use images/aws_sa_v1_simple.png>
-Package pdftex.def Info: images/aws_sa_v1_simple.png  used on input line 5.
+Package pdftex.def Info: images/aws_sa_v1_simple.png  used on input line 7.
 (pdftex.def)             Requested size: 407.66833pt x 389.87106pt.
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Package caption Warning: \label without proper reference on input line 7.
+See the caption package documentation for explanation.
 
-[9 <./images/lb-dns_name.png> <./images/site-success.png>] [10 <./images/aws_sa
-_v1_simple.png>]) [11] (./future_solutions.tex
-<images/aws_sa_v2_simple.png, id=70, 1367.1075pt x 833.1125pt>
+
+LaTeX Warning: Reference `fig:aws_sa_v1_simple' on page 10 undefined on input l
+ine 15.
+
+[10 <./images/aws_sa_v1_simple.png>]) [11] (./future_solutions.tex
+<images/aws_sa_v2_simple.png, id=71, 1367.1075pt x 833.1125pt>
 File: images/aws_sa_v2_simple.png Graphic file (type png)
 <use images/aws_sa_v2_simple.png>
-Package pdftex.def Info: images/aws_sa_v2_simple.png  used on input line 6.
+Package pdftex.def Info: images/aws_sa_v2_simple.png  used on input line 5.
 (pdftex.def)             Requested size: 407.66833pt x 248.42291pt.
 ) [12 <./images/aws_sa_v2_simple.png>] (./references.tex (./aws_sa.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 4--9
@@ -762,24 +764,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--9
 rise-[]marketing / SAP /
  []
 
-)) [13] (./aws_sa.aux) ) 
+)) [13] (./aws_sa.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 13952 strings out of 492649
- 262411 string characters out of 6129622
- 323130 words of memory out of 5000000
- 17668 multiletter control sequences out of 15000+600000
- 564547 words of font info for 81 fonts, out of 8000000 for 9000
+ 13939 strings out of 492649
+ 262141 string characters out of 6129622
+ 323461 words of memory out of 5000000
+ 17656 multiletter control sequences out of 15000+600000
+ 565088 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,9n,45p,10418b,340s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-
-super/cm-super-t1.enc}{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/
-8r.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
-0.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sftt1000.
-pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sftt1200.pf
-b></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr
-/local/texlive/2018/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/
-texlive/2018/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on aws_sa.pdf (14 pages, 1335281 bytes).
+ 41i,9n,45p,10418b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
+{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
+live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
+ive/2018/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texliv
+e/2018/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/
+2018/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2018/te
+xmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2018/texmf-dis
+t/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on aws_sa.pdf (14 pages, 1346325 bytes).
 PDF statistics:
  103 PDF objects out of 1000 (max. 8388607)
  54 compressed objects within 1 object stream

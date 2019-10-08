@@ -1,12 +1,13 @@
 \head{Solution Enhancement}
 
-\imagefigsingle
-{aws_sa_v1_simple}
-{My explanation]}
+There are a number of small-scale improvements we can make to the initial solution that will bring benefits in reliability, security, and observability. These improvements are small and iterative but have a large impact on the production performance. 
 
-\FloatBarrier
-\itemsnum {
-	
+\architecture
+{aws_sa_v1_simple}
+{Architecture diagram of an improved solution.}
+\changes
+{Changes and enhancements to the initial solution (Figure \ref{fig:aws_sa_v1_simple})}
+{
 	\item Addition of ACM certificate to load balancer to allow HTTPS to be enabled
 	\item Moving to Application Load Balancer(ALB) for HTTP->HTTPS redirection and layer 7 routing and WAF filtering
 	\item Enable detailed instance and load balancer metrics, shipping to Cloudwatch with dashboard. Log shipping and OS-level metrics through collectd and cloudwatch agent installation on AMI

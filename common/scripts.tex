@@ -63,6 +63,12 @@
 	\end{itemize}
 }
 
+\newcommand{\changes}[2]{
+\noindent\paragraph{#1}
+\itemsnum{#2}
+}
+
+
 \newcommand{\itemsnum}[1]{
 	\large 
 	\begin{enumerate}[noitemsep, label={(\arabic*)}]
@@ -91,7 +97,7 @@
 		\centering
 		\includegraphics[width=0.9\linewidth]{images/#1}
 		\captionsetup{labelfont=bf,singlelinecheck=on}
-		\caption{#2}
+		\caption*{#2}
 		\label{fig:#1}
 	\end{figure}
 }
@@ -173,11 +179,27 @@
 }
 
 \newcommand{\issue}[4]{
-	\noindent{\subsection{#1}} 
+	\noindent{\subsubsection*{#1}} 
+	%\noindent\paragraph{Solution: }#2
 	\noindent \paragraph{Summary: }#3 
-	%	\noindent\paragraph{Resolution: }#2
+	\FloatBarrier
 	\ifx&#4&%
 	\else
-	#4	
+	\noindent \paragraph{Resolution: }#4	 
+	\FloatBarrier
 	\fi
 }
+
+
+
+\newcommand{\architecture}[2]{
+	\begin{figure}[!h]
+		\centering
+	\captionsetup{labelformat=simple, labelfont=bf,singlelinecheck=on}
+
+		\includegraphics[width=0.9\linewidth]{images/#1}
+		\label{fig:#1}
+	\caption{\textbf{#2}}
+	\end{figure}
+}
+
