@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.21)  6 OCT 2019 16:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.21)  8 OCT 2019 06:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -738,33 +738,43 @@ Package pdftex.def Info: images/aws_sa_v1_simple.png  used on input line 5.
 (pdftex.def)             Requested size: 422.77664pt x 317.08656pt.
  [7 <./images/site-success.png> <./images/aws_sa_v1_simple.png>]) (./future_sol
 utions.tex
-<images/aws_sa_v2_simple.png, id=58, 1144.275pt x 706.64pt>
+
+LaTeX Warning: Citation `capacity-planning-for-sap-on-aws' on page 8 undefined 
+on input line 3.
+
+<images/aws_sa_v2_simple.png, id=58, 1367.1075pt x 746.79pt>
 File: images/aws_sa_v2_simple.png Graphic file (type png)
 <use images/aws_sa_v2_simple.png>
 Package pdftex.def Info: images/aws_sa_v2_simple.png  used on input line 6.
-(pdftex.def)             Requested size: 422.77664pt x 261.0861pt.
-)
-[8 <./images/aws_sa_v2_simple.png>] (./references.tex (./aws_sa.bbl)) [9]
-(./aws_sa.aux) ) 
+(pdftex.def)             Requested size: 422.77664pt x 230.94414pt.
+[8 <./images/aws_sa_v2_simple.png>]) [9] (./references.tex (./aws_sa.bbl
+
+LaTeX Warning: Empty `thebibliography' environment on input line 3.
+
+)) [10] (./aws_sa.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 13931 strings out of 492649
- 262096 string characters out of 6129622
- 323087 words of memory out of 5000000
- 17647 multiletter control sequences out of 15000+600000
+ 13934 strings out of 492649
+ 262144 string characters out of 6129622
+ 324141 words of memory out of 5000000
+ 17650 multiletter control sequences out of 15000+600000
  560117 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,9n,45p,10418b,317s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm
--super-t1.enc}{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}<
-/usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
-usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></us
-r/local/texlive/2018/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local
-/texlive/2018/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texliv
-e/2018/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on aws_sa.pdf (10 pages, 1314680 bytes).
+{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
+{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
+live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
+ive/2018/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texliv
+e/2018/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2018/
+texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2018/texmf-d
+ist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on aws_sa.pdf (11 pages, 1318110 bytes).
 PDF statistics:
- 86 PDF objects out of 1000 (max. 8388607)
- 42 compressed objects within 1 object stream
+ 89 PDF objects out of 1000 (max. 8388607)
+ 44 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  66 words of extra memory for PDF output out of 10000 (max. 10000000)
 

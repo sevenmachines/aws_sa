@@ -4,3 +4,17 @@
 \imagefigsingle
 {aws_sa_v2_simple}
 {My explanation]}
+
+\itemsnum {
+
+\item Users get DNS resolution from Route53 entries
+\item Cloudfront provides cached content from edge locations around the world. 
+\item A secured S3 bucket provides a highly scalable source of static content
+\item Active content is sourced through a public application load balancer (ALB).
+\item WAF is configured with rules in front of the ALB
+\item Applications requiring public internet addresses are installed on EC2 instances inside an auto-scaling group (ASG) in public subnets distributed across more than one availability zone.
+\item The NAT gateway service provides address translation to allow outbound internet access for the private subnets
+\item Applications that do not require public internet addresses are installed on EC2 instances inside an ASG in private subnets distributed across more than one availability zone.
+\item Elasticache (redis) provides in-memory caching for the database backend.
+\item RDS in multi-AZ mode gives resilient failover from primary to secondary, as well as < 5 min point in time recovery.
+}
