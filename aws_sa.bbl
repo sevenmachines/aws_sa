@@ -1,3 +1,10 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{capacity-planning-for-sap-on-aws}
+Amazon~Web Services.
+\newblock Amazon capacity planning for sap on aws.
+\newblock
+  \url{https://d1.awsstatic.com/enterprise-marketing/SAP/capacity-planning-for-sap-on-aws.pdf},
+  2019.
 
 \end{thebibliography}

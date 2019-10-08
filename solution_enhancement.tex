@@ -4,6 +4,17 @@
 {aws_sa_v1_simple}
 {My explanation]}
 
+\FloatBarrier
+\itemsnum {
+	
+	\item Addition of ACM certificate to load balancer to allow HTTPS to be enabled
+	\item Moving to Application Load Balancer(ALB) for HTTP->HTTPS redirection and layer 7 routing and WAF filtering
+	\item Enable detailed instance and load balancer metrics, shipping to Cloudwatch with dashboard. Log shipping and OS-level metrics through collectd and cloudwatch agent installation on AMI
+\item Instances placed in Auto-scaling group (ASG) for automatic management and healing of instances using load balancer HTTP:80 healthcheck 
+}
+
+\FloatBarrier
+
 \subhead{Operational}
 
 \textit{The ability to run and monitor systems to deliver business value and to continually improve supporting processes and procedures}
