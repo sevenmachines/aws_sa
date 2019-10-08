@@ -24,8 +24,6 @@
 \newcommand{\todoalert}[1]{\todo[inline,color=alerts]{ALERT: #1}}
 
 
-\newcommand{\head}[1]{\chapter{#1}}
-
 \definecolor{principle}{rgb}{0.7,0.9,1.0}
 \definecolor{concept}{rgb}{0.8,0.8,0.8}
 \definecolor{subconcept}{rgb}{0.9,0.9,0.9}
@@ -57,15 +55,7 @@
 \noindent\textbf{Result: }#5 
 }
 
-\newcommand{\issue}[4]{
-\noindent{\subsection{#1}} 
-	\noindent \paragraph{Summary: }#3 
-%	\noindent\paragraph{Resolution: }#2
-		\ifx&#4&%
-	\else
-	#4	
-	\fi
-}
+
 
 \newcommand{\items}[1]{
 	\begin{itemize}[noitemsep]
@@ -169,4 +159,24 @@
 			\label{fig:#5}
 		\end{minipage}
 	\end{figure}
+}
+
+\newcommand{\head}[1]{
+	\noindent{\section{#1}}
+}
+\newcommand{\subhead}[1]{
+	\noindent{\subsection{#1}}
+}
+\newcommand{\subsubhead}[1]{
+	\noindent{\subsubsection{#1}}
+}
+
+\newcommand{\issue}[4]{
+	\noindent{\subsection{#1}} 
+	\noindent \paragraph{Summary: }#3 
+	%	\noindent\paragraph{Resolution: }#2
+	\ifx&#4&%
+	\else
+	#4	
+	\fi
 }
