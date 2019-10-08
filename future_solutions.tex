@@ -7,16 +7,16 @@
 \changes
 {Building on the initial solution but with the use of a number of additional AWS services, the site can scale globally and meet the performance demands of a high capacity business}
 {
-\item \label{item:aws_sa_v2_simple_cloudfront} Cloudfront provides cached content from edge locations around the world. 
+\item \label{item:aws_sa_v2_simple_cloudfront} Cloudfront provides cached content from edge locations around the world \cite{cfn-api}. 
 \item \label{item:aws_sa_v2_simple_s3_origin} A secured S3 bucket provides a highly scalable source of static content
 \item \label{item:aws_sa_v2_simple_alb} Active content is sourced through a public application load balancer (ALB).
-\item \label{item:aws_sa_v2_simple_waf} WAF is configured with rules in front of the ALB
+\item \label{item:aws_sa_v2_simple_waf} WAF is configured with rules in front of the ALB \cite{ AWS-shield, waf-apiref, waf-dg}
 \item \label{item:aws_sa_v2_simple_azs} Applications requiring public internet addresses are installed on EC2 instances inside an auto-scaling group (ASG) in public subnets distributed across more than one availability zone.
-\item \label{item:aws_sa_v2_simple_nat} The NAT gateway service provides address translation to allow outbound internet access for the private subnets
+\item \label{item:aws_sa_v2_simple_nat} The NAT gateway service provides address translation to allow outbound internet access for the private subnets.
 \item \label{item:aws_sa_v2_simple_private} Applications that do not require public internet addresses are installed on EC2 instances inside an ASG in private subnets distributed across more than one availability zone.
-\item \label{item:aws_sa_v2_simple_elasticache} Elasticache (redis) provides in-memory caching for the database backend.
-\item \label{item:aws_sa_v2_simple_rds} RDS in multi-AZ mode gives resilient failover from primary to secondary, as well as < 5 min point in time recovery.
-\item \label{item:aws_sa_v2_simple_secrets} Secrets manager works with the Key Management Service (KMS) to allow instances with the right IAM roles to access their relevant credentials.
+\item \label{item:aws_sa_v2_simple_elasticache} Elasticache (redis) provides in-memory caching for the database backend \cite{redis-ug}.
+\item \label{item:aws_sa_v2_simple_rds} RDS in multi-AZ mode gives resilient failover from primary to secondary, as well as < 5 min point in time recovery \cite{rds-api}.
+\item \label{item:aws_sa_v2_simple_secrets} Secrets manager works with the Key Management Service (KMS) to allow instances with the right IAM roles to access their relevant credentials \cite{secretsmanager-userguide}.
 }
 
 \subhead{Operational}
