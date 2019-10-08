@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.21)  8 OCT 2019 06:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.21)  8 OCT 2019 06:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -742,11 +742,11 @@ utions.tex
 LaTeX Warning: Citation `capacity-planning-for-sap-on-aws' on page 8 undefined 
 on input line 3.
 
-<images/aws_sa_v2_simple.png, id=58, 1367.1075pt x 746.79pt>
+<images/aws_sa_v2_simple.png, id=58, 1367.1075pt x 834.11626pt>
 File: images/aws_sa_v2_simple.png Graphic file (type png)
 <use images/aws_sa_v2_simple.png>
 Package pdftex.def Info: images/aws_sa_v2_simple.png  used on input line 6.
-(pdftex.def)             Requested size: 422.77664pt x 230.94414pt.
+(pdftex.def)             Requested size: 422.77664pt x 257.94972pt.
 [8 <./images/aws_sa_v2_simple.png>]) [9] (./references.tex (./aws_sa.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
@@ -771,7 +771,7 @@ ive/2018/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texliv
 e/2018/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2018/
 texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2018/texmf-d
 ist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on aws_sa.pdf (11 pages, 1318110 bytes).
+Output written on aws_sa.pdf (11 pages, 1322907 bytes).
 PDF statistics:
  89 PDF objects out of 1000 (max. 8388607)
  44 compressed objects within 1 object stream
