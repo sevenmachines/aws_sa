@@ -20,12 +20,13 @@ There are a number of immediate improvements we can make to the initial solution
 
 \FloatBarrier
 
-\subhead{Operational}
+\subhead{Pillars}
+\subsubhead{Operational}
 
 Monitoring and logging on the existing instance can be increased by installing and enabling the cloudwatch agent on the application instances. The agent can then be set up to ship os-level metrics and application logs to Cloudwatch. Detailed metrics can also be enabled on the load balancer, auto-scaling group, and instances \ref{item:aws_sa_v1_simple_metrics}. 
 
 
-\subhead{Security}
+\subsubhead{Security}
 
 By moving from a classic load balancer (ELB) to the newer layer 7 Application Load Balancer (ALB), there are gains not only in performance, but much more flexibility in routing to different targets, alongside the ability to use layer HTTP header information \ref{item:aws_sa_v1_simple_alb}. By adding an automatically renewing ACM certificate we enable HTTPS support for the service. Termination of TLS on the load balancer means that the application servers themselves experience no additional load. We can also enable HTTP->HTTPS redirection on the load balancer, further enhancing security. 
 
@@ -35,19 +36,19 @@ In addtion to load balancer enhancements, the business should look at methods of
 
 Cloudtrail is enabled across all accounts and regions so that access to the AWS API can be controlled, alerted, and audited \ref{item:aws_sa_v1_simple_trail}.
 
-\subhead{Reliability}
+\subsubhead{Reliability}
 
 In the initial solution there is a single instance with no automatic recovery in the event of failure. With the application server running in only one availability zone, in the event of network disruption, the entire service would become unavailable. By replicating EC2 instances into more than one availlbilty zone, and enabling cross-zone load-balancing, we greatly increase the reliability of the service health \ref{item:aws_sa_v1_simple_azs}.
 
 Placing the instances into an auto-scaling group not only helps to ensure we have spread the application servers across availability zones, but also allows the ASG to replace failing servers with new ones based on the load balancers health check, giving the service an element of auto-healing \ref{item:aws_sa_v1_simple_asg}.
 
-\subhead{Performance}
+\subsubhead{Performance}
 
 With the addition of the auto-scaling group, we can add in cloudwatch alarms to control the number of instances running. For example, we could set a CPU percentage or network utilisation target, ensuring that the ASG increased or decreased the number of instances as required to maintain that usage level.
 
 Note, the current solution uses bursting t2.micro instances with CPU credit limits. This is low cost, but performance is not suitable for sustained traffic levels where exhausting CPU credits will cause degradation of availability. The instance type will need to be right-sized given realistic production traffic patterns, and a non-bursting instance type may be preferable.
 
-\subhead{Cost} 
+\subsubhead{Cost} 
 
 The auto-scaling functionality should mean that service costs are kept minimal. Further choices should be made as the service is evaluated in production, where reserving some baseline instances or combining capacity with spot purchases as part of an EC2 fleet may be applicable as the service evolves.
 

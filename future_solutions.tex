@@ -1,11 +1,16 @@
-\head{Future expansion}
+\head{Expansion}
+
+\subhead{Overview}
+	
+Building on the initial solution but with the use of a number of additional AWS services, we can make the site scale globally and meet the performance demands of a high capacity business.
+	
 
 \architecture
 {aws_sa_v2_simple}
 {Large scalable production solution}
 
 \changes
-{Building on the initial solution but with the use of a number of additional AWS services, the site can scale globally and meet the performance demands of a high capacity business}
+{Global scale improvements}
 {
 \item \label{item:aws_sa_v2_simple_cloudfront} Cloudfront provides cached content from edge locations around the world \cite{cfn-api}. 
 \item \label{item:aws_sa_v2_simple_s3_origin} A secured S3 bucket provides a highly scalable source of static content
@@ -19,10 +24,13 @@
 \item \label{item:aws_sa_v2_simple_secrets} Secrets manager works with the Key Management Service (KMS) to allow instances with the right IAM roles to access their relevant credentials \cite{secretsmanager-userguide}.
 }
 
-\subhead{Operational}
+\subhead{Pillars}
 
+\subsubhead{Operational}
 
-\subhead{Security}
+\todoaction{Do the Operational}
+
+\subsubhead{Security}
 
 By moving as much of the application into non-accessible private subnets, the exposure of running services to attack is greatly reduced. In addition, strong security group and NACL rules can protect the independent application and data components. There may be options depending on the behaviour of the services moving forward to restrict access to running services further and integrate private subnets with VPC endpoint services to prevent internal traffic traversing networks outside of AWS.
 
@@ -33,16 +41,19 @@ Although bastion servers are an option, access to private servers should be thro
 Secrets access is kept secure through AWS Secrets manager, allowing services to have granular access to encrypted data during runtime. There is also the option of regularly rotating credentials such as database passwords.
 
 
-\subhead{Reliability}
+\subsubhead{Reliability}
 
 The caching provided by Cloudfront means that the site can remain functional if degraded, for users even in the event of the servers becoming unavailable. There is also the option for a fallback to a static version of the site through Route53 healthchecks.
 
-\subhead{Performance}
+\subsubhead{Performance}
 
 The use of cloudfront for static assets such as images, videos, and javascript, means that the performance overhead is moved from the EC2 instances, onto globally distributed edge locations, giving greater responsiveness for users.
 
 
-\subhead{Cost} 
+\subsubhead{Cost} 
 
 Moving assets to edge locations reduces bandwidth costs for moving data through the network, as well as reducing the needed EC2 compute power to run the service.
 
+\subhead{Summary}
+
+\todoaction{Do the summary}
