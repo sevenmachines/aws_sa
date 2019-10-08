@@ -7,14 +7,40 @@
 \changes
 {Building on the initial solution but with the use of a number of additional AWS services, the site can scale globally and meet the performance demands of a high capacity business}
 {
-\item Users get DNS resolution from Route53 entries
-\item Cloudfront provides cached content from edge locations around the world. 
-\item A secured S3 bucket provides a highly scalable source of static content
-\item Active content is sourced through a public application load balancer (ALB).
-\item WAF is configured with rules in front of the ALB
-\item Applications requiring public internet addresses are installed on EC2 instances inside an auto-scaling group (ASG) in public subnets distributed across more than one availability zone.
-\item The NAT gateway service provides address translation to allow outbound internet access for the private subnets
-\item Applications that do not require public internet addresses are installed on EC2 instances inside an ASG in private subnets distributed across more than one availability zone.
-\item Elasticache (redis) provides in-memory caching for the database backend.
-\item RDS in multi-AZ mode gives resilient failover from primary to secondary, as well as < 5 min point in time recovery.
+\item \label{item:aws_sa_v2_simple_cloudfront} Cloudfront provides cached content from edge locations around the world. 
+\item \label{item:aws_sa_v2_simple_s3_origin} A secured S3 bucket provides a highly scalable source of static content
+\item \label{item:aws_sa_v2_simple_alb} Active content is sourced through a public application load balancer (ALB).
+\item \label{item:aws_sa_v2_simple_waf} WAF is configured with rules in front of the ALB
+\item \label{item:aws_sa_v2_simple_azs} Applications requiring public internet addresses are installed on EC2 instances inside an auto-scaling group (ASG) in public subnets distributed across more than one availability zone.
+\item \label{item:aws_sa_v2_simple_nat} The NAT gateway service provides address translation to allow outbound internet access for the private subnets
+\item \label{item:aws_sa_v2_simple_private} Applications that do not require public internet addresses are installed on EC2 instances inside an ASG in private subnets distributed across more than one availability zone.
+\item \label{item:aws_sa_v2_simple_elasticache} Elasticache (redis) provides in-memory caching for the database backend.
+\item \label{item:aws_sa_v2_simple_rds} RDS in multi-AZ mode gives resilient failover from primary to secondary, as well as < 5 min point in time recovery.
+\item \label{item:aws_sa_v2_simple_secrets} Secrets manager works with the Key Management Service (KMS) to allow instances with the right IAM roles to access their relevant credentials.
 }
+
+\subhead{Operational}
+
+
+\subhead{Security}
+
+By moving as much of the application into non-accessible private subnets, the exposure of running services to attack is greatly reduced. In addition, strong security group and NACL rules can protect the independent application and data components. There may be options depending on the behaviour of the services moving forward to restrict access to running services further and integrate private subnets with VPC endpoint services to prevent internal traffic traversing networks outside of AWS.
+
+Although bastion servers are an option, access to private servers should be through the SSM session manager and IAM user access. This not only removes the need to run publically exposed bastion servers, but also means that access can be logged and audited through Cloudtrail.
+
+Secrets access is kept secure through AWS Secrets manager, allowing services to have granular access to encrypted data during runtime. There is also the option of regularly rotating credentials such as database passwords.
+
+
+\subhead{Reliability}
+
+The caching provided by Cloudfront means that the site can remain functional if degraded, for users even in the event of the servers becoming unavailable. There is also the option for a fallback to a static version of the site through Route53 healthchecks.
+
+\subhead{Performance}
+
+The use of cloudfront for static assets such as images, videos, and javascript, means that the performance overhead is moved from the EC2 instances, onto globally distributed edge locations, giving greater responsiveness for users.
+
+
+\subhead{Cost} 
+
+Moving assets to edge locations reduces bandwidth costs for moving data through the network, as well as reducing the needed EC2 compute power to run the service.
+

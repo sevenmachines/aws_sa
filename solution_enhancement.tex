@@ -1,6 +1,8 @@
-\head{Solution Enhancement}
+\head{Enhancement}
 
-There are a number of small-scale improvements we can make to the initial solution that will bring benefits in reliability, security, and observability. These improvements are small and iterative but have a large impact on the production performance. 
+\subhead{Overview}
+
+There are a number of immediate improvements we can make to the initial solution that will bring benefits in reliability, security, and observability. These improvements are small and iterative but have a large impact on the production performance. 
 
 \architecture
 {aws_sa_v1_simple}
@@ -8,60 +10,48 @@ There are a number of small-scale improvements we can make to the initial soluti
 \changes
 {Changes and enhancements to the initial solution (Figure \ref{fig:aws_sa_v1_simple})}
 {
-	\item Addition of ACM certificate to load balancer to allow HTTPS to be enabled
-	\item Moving to Application Load Balancer(ALB) for HTTP->HTTPS redirection and layer 7 routing and WAF filtering
-	\item Enable detailed instance and load balancer metrics, shipping to Cloudwatch with dashboard. Log shipping and OS-level metrics through collectd and cloudwatch agent installation on AMI
-\item Instances placed in Auto-scaling group (ASG) for automatic management and healing of instances using load balancer HTTP:80 healthcheck 
+	\item \label{item:aws_sa_v1_simple_acm} Addition of ACM certificate to load balancer to allow HTTPS to be enabled \cite{acm-apiref}.
+	\item \label{item:aws_sa_v1_simple_alb} Moving to Application Load Balancer(ALB) for HTTP->HTTPS redirection and layer 7 routing and WAF filtering \cite{elb-api}.
+	\item \label{item:aws_sa_v1_simple_metrics} Enable detailed instance and load balancer metrics, shipping to Cloudwatch with dashboard. Log shipping and OS-level metrics through collectd and cloudwatch agent installation on AMI \cite{cwl-api}.
+	\item \label{item:aws_sa_v1_simple_asg} Instances placed in Auto-scaling group (ASG) for automatic management and healing of instances using load balancer \texttt{HTTP:80} healthcheck \cite{as-api}. 
+	\item \label{item:aws_sa_v1_simple_azs} Instances are replicated into multiple availability zones.
+	\item \label{item:aws_sa_v1_simple_trail} Cloudtrail is enabled in the AWS account to log all AWS API access \cite{awscloudtrail-api}. 
 }
 
 \FloatBarrier
 
 \subhead{Operational}
 
-\textit{The ability to run and monitor systems to deliver business value and to continually improve supporting processes and procedures}
-
-\subsubhead{Improve monitoring and logging}
-
-Monitoring and logging on the existing instance can be increased by enabling the cloudwatch agent on the application instances
+Monitoring and logging on the existing instance can be increased by installing and enabling the cloudwatch agent on the application instances. The agent can then be set up to ship os-level metrics and application logs to Cloudwatch. Detailed metrics can also be enabled on the load balancer, auto-scaling group, and instances \ref{item:aws_sa_v1_simple_metrics}. 
 
 
 \subhead{Security}
 
-\textit{The ability to protect information, systems, and assets while delivering business value through risk assessments and mitigation strategies}
+By moving from a classic load balancer (ELB) to the newer layer 7 Application Load Balancer (ALB), there are gains not only in performance, but much more flexibility in routing to different targets, alongside the ability to use layer HTTP header information \ref{item:aws_sa_v1_simple_alb}. By adding an automatically renewing ACM certificate we enable HTTPS support for the service. Termination of TLS on the load balancer means that the application servers themselves experience no additional load. We can also enable HTTP->HTTPS redirection on the load balancer, further enhancing security. 
 
-\subsubhead{Harden EC2 instances}
+Future placing of the AWS WAF service in front of the ALB mean that granular controls in mitigating attacks can be added at minimal extra cost. NACL are quite open currently and could be more restrictive, the private NACL allows all external traffic to pass for example. We can increase security by allowing only access from public subnets, or additionally from private endpoints, NAT gateways etc. 
 
-\subsubhead{Enable SSM session manager}
+In addtion to load balancer enhancements, the business should look at methods of hardening the EC2 instances, such as pre-baking AMI's, or moving them into private subnets and adding the NAT service to allow internet access. In this case adding the SSM agent to instances and using session manager to allow IAM users SSH access would be preferable to installing publically facing bastion servers.
 
-\subsubhead{Strengthen NACL to prevent cross-subnet traffic}
-
-\subsubhead{Only allow NACL to pass traffic to private subnets from public subnets}
-
-The private NACL allows all external traffic to pass. We can increase security by allowing only access from public subnets, or additionally from private endpoints, NAT gateways etc.
+Cloudtrail is enabled across all accounts and regions so that access to the AWS API can be controlled, alerted, and audited \ref{item:aws_sa_v1_simple_trail}.
 
 \subhead{Reliability}
 
-\textit{The ability of a system to recover from infrastructure or service disruptions, dynamically acquire computing resources to meet demand, and mitigate disruptions such as misconfigurations or transient network issues}
+In the initial solution there is a single instance with no automatic recovery in the event of failure. With the application server running in only one availability zone, in the event of network disruption, the entire service would become unavailable. By replicating EC2 instances into more than one availlbilty zone, and enabling cross-zone load-balancing, we greatly increase the reliability of the service health \ref{item:aws_sa_v1_simple_azs}.
 
-Currently there is a single instance with no auto-recovery
-
-\subsubhead{Replicate instances into multiple AZs}
-
-\subsubhead{Create an auto-scaling group for application instances}
+Placing the instances into an auto-scaling group not only helps to ensure we have spread the application servers across availability zones, but also allows the ASG to replace failing servers with new ones based on the load balancers health check, giving the service an element of auto-healing \ref{item:aws_sa_v1_simple_asg}.
 
 \subhead{Performance}
 
-\textit{The ability to use computing resources efficiently
-	to meet system requirements, and to maintain that efficiency as demand changes and technologies evolve}
+With the addition of the auto-scaling group, we can add in cloudwatch alarms to control the number of instances running. For example, we could set a CPU percentage or network utilisation target, ensuring that the ASG increased or decreased the number of instances as required to maintain that usage level.
 
-\subsubhead{Change instance type}
-
-The current solution uses bursting t2.micro instances with CPU credit limits. This is very cost efficient, but performance is not suitable for reasonable traffic levels and exhausting CPU credits will cause degradation of availability.
+Note, the current solution uses bursting t2.micro instances with CPU credit limits. This is low cost, but performance is not suitable for sustained traffic levels where exhausting CPU credits will cause degradation of availability. The instance type will need to be right-sized given realistic production traffic patterns, and a non-bursting instance type may be preferable.
 
 \subhead{Cost} 
 
-\textit{The ability to run systems to deliver business value at the lowest price point}
+The auto-scaling functionality should mean that service costs are kept minimal. Further choices should be made as the service is evaluated in production, where reserving some baseline instances or combining capacity with spot purchases as part of an EC2 fleet may be applicable as the service evolves.
 
+\newpage
 
 
 

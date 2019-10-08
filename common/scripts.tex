@@ -6,6 +6,7 @@
 \usepackage{caption}
 \usepackage{placeins}
 \usepackage{tabularx}
+\usepackage[export]{adjustbox} % loads also graphicx
 
 % Generic colours
 \definecolor{comments}{gray}{0.95}
@@ -64,7 +65,7 @@
 }
 
 \newcommand{\changes}[2]{
-\noindent\paragraph{#1}
+\noindent \textbf{#1}
 \itemsnum{#2}
 }
 
@@ -106,8 +107,9 @@
 	\begin{figure}[!h]
 		\centering
 		\fcolorbox{white}{gray}{
-			\includegraphics[width=0.9\linewidth]{images/#1}
+		\includegraphics[keepaspectratio,max width=0.9\linewidth, max height=0.75\linewidth]{images/#1}
 		}
+
 		\captionsetup{labelfont=bf,singlelinecheck=on}
 		\caption{#2}
 		\label{fig:#1}
@@ -142,53 +144,18 @@
 	\end{figure}
 }
 
-\newcommand{\dualtableimage}[6]{
-	\begin{figure}[t!]
-		\centering
-		\begin{minipage}{.48\textwidth}
-			\vspace{0pt}
-			\small
-			\begin{tabular}{#1}
-				\hline
-				#2
-				\hline
-			\end{tabular}
-			\captionsetup{labelfont=bf,singlelinecheck=on,justification=raggedright}
-			\captionof{table}{Table #3}
-			\label{table:#4}
-		\end{minipage}
-		\hfill
-		\begin{minipage}{.48\textwidth}
-			\vspace{0pt}
-			\includegraphics[width=1\linewidth]{images/#5}
-			\captionsetup{labelfont=bf,singlelinecheck=on,justification=raggedright}
-			\captionof{figure}{#6}
-			\label{fig:#5}
-		\end{minipage}
-	\end{figure}
-}
 
-\newcommand{\head}[1]{
-	\noindent{\section{#1}}
-}
-\newcommand{\subhead}[1]{
-	\noindent{\subsection{#1}}
-}
-\newcommand{\subsubhead}[1]{
-	\noindent{\subsubsection{#1}}
-}
 
 \newcommand{\issue}[4]{
-	\noindent{\subsubsection*{#1}} 
-	%\noindent\paragraph{Solution: }#2
-	\noindent \paragraph{Summary: }#3 
 	\FloatBarrier
-	\ifx&#4&%
-	\else
-	\noindent \paragraph{Resolution: }#4	 
+	\stepcounter{IssueCounter}
+	\noindent{\subsection{#1}} 
+	#3
 	\FloatBarrier
-	\fi
+	#4
+	\FloatBarrier
 }
+
 
 
 
@@ -197,9 +164,57 @@
 		\centering
 	\captionsetup{labelformat=simple, labelfont=bf,singlelinecheck=on}
 
-		\includegraphics[width=0.9\linewidth]{images/#1}
-		\label{fig:#1}
+		\includegraphics[keepaspectratio, width=0.9\linewidth]{images/#1}
+		
 	\caption{\textbf{#2}}
+			\label{fig:#1}
+
 	\end{figure}
 }
 
+\newcommand{\singletable}[4]{
+	\begin{table}[!htb]
+		\small
+		\renewcommand{\arraystretch}{1.5}
+		\centering
+		\begin{minipage}{1\textwidth}
+			\vspace{0pt}
+			\begin{tabular}{#1}
+				\hline
+				#2
+				\hline
+			\end{tabular}
+			\captionsetup{labelfont=bf,singlelinecheck=on,justification=raggedright}
+			\caption{#3}
+			\label{table:#4}
+		\end{minipage}
+	\end{table}
+}
+
+\newcommand{\dualtableimage}[6]{
+	\begin{figure}[t!]
+		\centering
+		
+		\begin{minipage}{.9\textwidth}
+			\vspace{0pt}
+			\includegraphics[width=1\linewidth]{images/#5}
+			\captionsetup{labelfont=bf,singlelinecheck=on,justification=raggedright}
+			\captionof{figure}{#6}
+			\label{fig:#5}
+		\end{minipage}
+	\hfill
+	\begin{minipage}{.9\textwidth}
+		\vspace{0pt}
+		\small
+		\begin{tabular}{#1}
+			\hline
+			#2
+			\hline
+		\end{tabular}
+		\captionsetup{labelfont=bf,singlelinecheck=on,justification=raggedright}
+		\captionof{table}{Table #3}
+		\label{table:#4}
+	\end{minipage}
+	
+	\end{figure}
+}
