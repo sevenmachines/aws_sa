@@ -26,6 +26,8 @@
 
 By moving as much of the application into non-accessible private subnets, the exposure of running services to attack is greatly reduced. In addition, strong security group and NACL rules can protect the independent application and data components. There may be options depending on the behaviour of the services moving forward to restrict access to running services further and integrate private subnets with VPC endpoint services to prevent internal traffic traversing networks outside of AWS.
 
+Cloudfront can also be set to filter requests, allow only certain request types, filter cookies, etc. Meaning there the site can be restricted to the smallest set of requests that it needs to be functional for the end-users.
+
 Although bastion servers are an option, access to private servers should be through the SSM session manager and IAM user access. This not only removes the need to run publically exposed bastion servers, but also means that access can be logged and audited through Cloudtrail.
 
 Secrets access is kept secure through AWS Secrets manager, allowing services to have granular access to encrypted data during runtime. There is also the option of regularly rotating credentials such as database passwords.

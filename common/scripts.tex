@@ -66,16 +66,23 @@
 
 \newcommand{\changes}[2]{
 \noindent \textbf{#1}
-\itemsnum{#2}
+\itemslet{#2}
 }
 
 
-\newcommand{\itemsnum}[1]{
-	\large 
-	\begin{enumerate}[noitemsep, label={(\arabic*)}]
+\newcommand{\itemsnum}[1]{ 
+	\begin{enumerate}[noitemsep, label={\texttt{(\textbf{\arabic*)}}}]
 		#1
 	\end{enumerate}
 }
+
+\newcommand{\itemslet}[1]{ 
+	\begin{enumerate}[noitemsep, label={\texttt{(\textbf{\Alph*)}}}]
+		#1
+	\end{enumerate}
+}
+
+
 
 \newcommand{\imagefig}[2]{
 	\centering

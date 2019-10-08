@@ -51,7 +51,11 @@ Note, the current solution uses bursting t2.micro instances with CPU credit limi
 
 The auto-scaling functionality should mean that service costs are kept minimal. Further choices should be made as the service is evaluated in production, where reserving some baseline instances or combining capacity with spot purchases as part of an EC2 fleet may be applicable as the service evolves.
 
-\newpage
+\subhead{Summary}
+
+The changes we've covered here will provide a robust and scalable system. Depending on the clients balance between change, cost, and performance characteristics, it would also be recommended to look at some more advanced changes such as moving the applications into private subnets and using the public NAT instances to allow them outbound access to the internet. Note also that its likely that a custom zone and domain name routing to the load balancer would be a requirement of a live system to give the service a friendly name.
+
+We have also assumed here that the applications are stateless, and that no data is stored in a database as yet. The system is designed so that adding an RDS database such as Aurora mysql/postgres will be simple. If we expect non-stateless EC2 instances themselves then additional options such as an S3 bucket or EFS filesystem to preserve state for instances as they are terminated or created.
 
 
 
