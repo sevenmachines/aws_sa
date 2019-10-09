@@ -28,6 +28,7 @@ Building on the initial solution but with the use of a number of additional AWS 
 
 \subsubhead{Operational}
 
+The addition of Cloudfront and WAF metrics means that observability of the customers usage and experiences with the site overall are covered in more depth. 
 \todoaction{Do the Operational}
 
 \subsubhead{Security}
@@ -39,7 +40,6 @@ Cloudfront can also be set to filter requests, allow only certain request types,
 Although bastion servers are an option, access to private servers should be through the SSM session manager and IAM user access. This not only removes the need to run publically exposed bastion servers, but also means that access can be logged and audited through Cloudtrail.
 
 Secrets access is kept secure through AWS Secrets manager, allowing services to have granular access to encrypted data during runtime. There is also the option of regularly rotating credentials such as database passwords.
-
 
 \subsubhead{Reliability}
 
@@ -56,4 +56,5 @@ Moving assets to edge locations reduces bandwidth costs for moving data through 
 
 \subhead{Summary}
 
+This new configuration builds upon the initial basic implementation but incorporates features that support a globally scalable customer service. The infrastructure costs are kept minimal, with costs scaling efficiently with traffic increase. The use of CDN, database caching, and auto-scaling mean that customer response times and availbility are maintained even with high rates of customer engagement, even given a variety of traffic across multimedia, static, and dynamic requests.
 \todoaction{Do the summary}

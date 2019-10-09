@@ -2,7 +2,7 @@
 
 \subhead{Overview}
 
-The current implementation cannot be accessed from external networks. Here we will go through the current setup, look at the issues that are preventing successful access by customers, and provide minimum changes to return the site to working health.
+The current implementation cannot be accessed from external networks. Here we will go through the current setup, look at the issues that are preventing successful access by customers, and capture the minimum changes to return the site to working health.
 
 \architecture
 {aws_sa_v0_simple}
@@ -113,4 +113,4 @@ The DNS name for the site can be found on the 'Description' tab of the 'Load bal
 
 \subhead{Summary}
 
-\todoaction{Do the summary}
+This walkthrough identifies the issues that are blocking customers accessing the site. Foloowing the step-by-step guides will ensure that the site is reachable. However, these represent the minimal changes and not necessarilly all that would be recommended for a production site. These changes should also ideally be implemented through updating the clients infrastructure-as-code such as Cloudformation or Terraform as relevant.
