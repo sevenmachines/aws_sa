@@ -66,8 +66,16 @@
 }
 
 \newcommand{\changes}[2]{
+	\centering
+	\setlength{\fboxsep}{10pt}
+	\setlength{\fboxrule}{1pt}
+\fcolorbox{lightgray}{white}{
+	\parbox{0.8\textwidth}{
 \noindent \textbf{#1}
 \itemslet{#2}
+}
+}
+\
 }
 
 
