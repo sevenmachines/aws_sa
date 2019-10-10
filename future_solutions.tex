@@ -3,7 +3,6 @@
 \subhead{Overview}
 	
 Building on the initial solution but with the use of a number of additional AWS services, we can make the site scale globally and meet the performance demands of a high capacity business.
-	
 
 \architecture
 {aws_sa_v2_simple}
@@ -16,7 +15,7 @@ Building on the initial solution but with the use of a number of additional AWS 
 \item \label{item:aws_sa_v2_simple_s3_origin} A secured S3 bucket provides a highly scalable source of static content
 \item \label{item:aws_sa_v2_simple_alb} Active content is sourced through a public application load balancer (ALB).
 \item \label{item:aws_sa_v2_simple_waf} WAF is configured with rules in front of the ALB \cite{ AWS-shield, waf-apiref, waf-dg}
-\item \label{item:aws_sa_v2_simple_azs} Applications requiring public internet addresses are installed on EC2 instances inside an auto-scaling group (ASG) in public subnets distributed across more than one availability zone.
+\item \label{item:aws_sa_v2_simple_azs} Applications requiring public internet addresses are installed on EC2 instances controlled by an auto-scaling group (ASG) in public subnets distributed across more than one availability zone.
 \item \label{item:aws_sa_v2_simple_nat} The NAT gateway service provides address translation to allow outbound internet access for the private subnets.
 \item \label{item:aws_sa_v2_simple_private} Applications that do not require public internet addresses are installed on EC2 instances inside an ASG in private subnets distributed across more than one availability zone.
 \item \label{item:aws_sa_v2_simple_elasticache} Elasticache (redis) provides in-memory caching for the database backend \cite{redis-ug}.
@@ -28,8 +27,7 @@ Building on the initial solution but with the use of a number of additional AWS 
 
 \subsubhead{Operational}
 
-The addition of Cloudfront and WAF metrics means that observability of the customers usage and experiences with the site overall are covered in more depth. 
-\todoaction{Do the Operational}
+The addition of Cloudfront and WAF metrics means that observability of the customers usage and experiences with the site overall are covered in more depth. Additional origins can be added in, meaning that new infrastructure can be added into the main site easily.
 
 \subsubhead{Security}
 
@@ -37,17 +35,17 @@ By moving as much of the application into non-accessible private subnets, the ex
 
 Cloudfront can also be set to filter requests, allow only certain request types, filter cookies, etc. Meaning there the site can be restricted to the smallest set of requests that it needs to be functional for the end-users.
 
-Although bastion servers are an option, access to private servers should be through the SSM session manager and IAM user access. This not only removes the need to run publically exposed bastion servers, but also means that access can be logged and audited through Cloudtrail.
+Although bastion servers are an option, access to private servers could be added through the SSM session manager and IAM user access. This not only removes the need to run publicly exposed bastion servers, but also means that access can be logged and audited through Cloudtrail.
 
 Secrets access is kept secure through AWS Secrets manager, allowing services to have granular access to encrypted data during runtime. There is also the option of regularly rotating credentials such as database passwords.
 
 \subsubhead{Reliability}
 
-The caching provided by Cloudfront means that the site can remain functional if degraded, for users even in the event of the servers becoming unavailable. There is also the option for a fallback to a static version of the site through Route53 healthchecks.
+The caching provided by Cloudfront means that the site can remain functional if degraded, for users even in the event of the servers becoming unavailable. Finely controlled fallback to a static version of the site or other sources through the use of origin groups.
 
 \subsubhead{Performance}
 
-The use of cloudfront for static assets such as images, videos, and javascript, means that the performance overhead is moved from the EC2 instances, onto globally distributed edge locations, giving greater responsiveness for users.
+The use of Cloudfront for static assets such as images, videos, and Javascript, means that the performance and network transfer overhead is moved from the EC2 instances onto globally distributed edge locations. This gives greater responsiveness for users and higher availability assurances.
 
 
 \subsubhead{Cost} 
@@ -56,5 +54,4 @@ Moving assets to edge locations reduces bandwidth costs for moving data through 
 
 \subhead{Summary}
 
-This new configuration builds upon the initial basic implementation but incorporates features that support a globally scalable customer service. The infrastructure costs are kept minimal, with costs scaling efficiently with traffic increase. The use of CDN, database caching, and auto-scaling mean that customer response times and availbility are maintained even with high rates of customer engagement, even given a variety of traffic across multimedia, static, and dynamic requests.
-\todoaction{Do the summary}
+This possible configuration builds upon the initial basic implementation and incorporates features that support a globally scalable customer service. The infrastructure costs are kept minimal, with costs scaling efficiently with traffic increase. The use of CDN, database caching, and auto-scaling mean that customer response times and availbility are maintained even with high rates of customer engagement, even given a variety of traffic across multimedia, static, and dynamic requests.

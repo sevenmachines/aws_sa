@@ -12,7 +12,7 @@ There are a number of immediate improvements we can make to the initial solution
 {
 	\item \label{item:aws_sa_v1_simple_acm} Addition of ACM certificate to load balancer to allow HTTPS to be enabled \cite{acm-apiref}.
 	\item \label{item:aws_sa_v1_simple_alb} Moving to Application Load Balancer(ALB) for HTTP->HTTPS redirection and layer 7 routing and WAF filtering \cite{elb-api}.
-	\item \label{item:aws_sa_v1_simple_metrics} Enable detailed instance and load balancer metrics, shipping to Cloudwatch with dashboard. Log shipping and OS-level metrics through collectd and cloudwatch agent installation on AMI \cite{cwl-api}.
+	\item \label{item:aws_sa_v1_simple_metrics} Enable detailed instance and load balancer metrics, shipping to Cloudwatch with dashboard. Logs and OS-level metrics through \texttt{collectd} and Cloudwatch agent installation on the applications AMI \cite{cwl-api}.
 	\item \label{item:aws_sa_v1_simple_asg} Instances placed in Auto-scaling group (ASG) for automatic management and healing of instances using load balancer \texttt{HTTP:80} healthcheck \cite{as-api}. 
 	\item \label{item:aws_sa_v1_simple_azs} Instances are replicated into multiple availability zones.
 	\item \label{item:aws_sa_v1_simple_trail} Cloudtrail is enabled in the AWS account to log all AWS API access \cite{awscloudtrail-api}. 
@@ -28,23 +28,23 @@ Monitoring and logging on the existing instance can be increased by installing a
 
 \subsubhead{Security}
 
-By moving from a classic load balancer (ELB) to the newer layer 7 Application Load Balancer (ALB), there are gains not only in performance, but much more flexibility in routing to different targets, alongside the ability to use layer HTTP header information \ref{item:aws_sa_v1_simple_alb}. By adding an automatically renewing ACM certificate we enable HTTPS support for the service. Termination of TLS on the load balancer means that the application servers themselves experience no additional load. We can also enable HTTP->HTTPS redirection on the load balancer, further enhancing security. 
+By moving from a classic load balancer (ELB) to the newer layer 7 Application Load Balancer (ALB), there are gains not only in performance, but much more flexibility in routing to different targets, alongside the ability to use HTTP header information \ref{item:aws_sa_v1_simple_alb}. By adding an automatically renewing ACM certificate we enable HTTPS support for the service. Termination of TLS on the load balancer means that the application servers themselves experience no additional load, so larger and more expensive instances are not required. We can also enable HTTP->HTTPS redirection on the load balancer, further enhancing security, and again, offloading that work from the application code. 
 
-Future placing of the AWS WAF service in front of the ALB mean that granular controls in mitigating attacks can be added at minimal extra cost. NACL are quite open currently and could be more restrictive, the private NACL allows all external traffic to pass for example. We can increase security by allowing only access from public subnets, or additionally from private endpoints, NAT gateways etc. 
+Future placement of the AWS WAF service in front of the ALB mean that granular controls in mitigating attacks can be added at minimal extra cost. NACL are quite open currently and could be more restrictive, the private NACL allows all external traffic to pass for example. We can increase security by allowing only access from public subnets, or additionally from private endpoints, NAT gateways etc. 
 
-In addtion to load balancer enhancements, the business should look at methods of hardening the EC2 instances, such as pre-baking AMI's, or moving them into private subnets and adding the NAT service to allow internet access. In this case adding the SSM agent to instances and using session manager to allow IAM users SSH access would be preferable to installing publically facing bastion servers.
+In addition to load balancer enhancements, the business should look at methods of hardening the EC2 instances, such as pre-baking AMI's, or moving them into private subnets and adding the NAT service to allow internet access. In this case adding the SSM agent to instances and using session manager to allow IAM users SSH access would be preferable to installing publically facing bastion servers.
 
 Cloudtrail is enabled across all accounts and regions so that access to the AWS API can be controlled, alerted, and audited \ref{item:aws_sa_v1_simple_trail}.
 
 \subsubhead{Reliability}
 
-In the initial solution there is a single instance with no automatic recovery in the event of failure. With the application server running in only one availability zone, in the event of network disruption, the entire service would become unavailable. By replicating EC2 instances into more than one availlbilty zone, and enabling cross-zone load-balancing, we greatly increase the reliability of the service health \ref{item:aws_sa_v1_simple_azs}.
+In the initial solution there is a single instance with no automatic recovery in the event of failure. With the application server running in only one availability zone, in the event of network disruption, the entire service would become unavailable. By replicating EC2 instances into more than one availability zone, and enabling cross-zone load-balancing, we greatly increase the reliability of the service health \ref{item:aws_sa_v1_simple_azs}.
 
 Placing the instances into an auto-scaling group not only helps to ensure we have spread the application servers across availability zones, but also allows the ASG to replace failing servers with new ones based on the load balancers health check, giving the service an element of auto-healing \ref{item:aws_sa_v1_simple_asg}.
 
 \subsubhead{Performance}
 
-With the addition of the auto-scaling group, we can add in cloudwatch alarms to control the number of instances running. For example, we could set a CPU percentage or network utilisation target, ensuring that the ASG increased or decreased the number of instances as required to maintain that usage level.
+With the addition of the auto-scaling group, we can add in Cloudwatch alarms to control the number of instances running based on current spare capacity. For example, we could set a CPU percentage or network utilisation target, ensuring that the ASG increased or decreased the number of instances as required to maintain that usage level.
 
 Note, the current solution uses bursting t2.micro instances with CPU credit limits. This is low cost, but performance is not suitable for sustained traffic levels where exhausting CPU credits will cause degradation of availability. The instance type will need to be right-sized given realistic production traffic patterns, and a non-bursting instance type may be preferable.
 
@@ -54,10 +54,11 @@ The auto-scaling functionality should mean that service costs are kept minimal. 
 
 \subhead{Summary}
 
-The changes we've covered here will provide a robust and scalable system. Depending on the clients balance between change, cost, and performance characteristics, it would also be recommended to look at some more advanced changes such as moving the applications into private subnets and using the public NAT instances to allow them outbound access to the internet. Note also that its likely that a custom zone and domain name routing to the load balancer would be a requirement of a live system to give the service a friendly name.
+The changes we've covered here will provide a robust and scalable system. Depending on the clients balance between change, cost, and performance characteristics, it would also be recommended to look at some more changes such as,
 
-We have also assumed here that the applications are stateless, and that no data is stored in a database as yet. The system is designed so that adding an RDS database such as Aurora mysql/postgres will be simple. If we expect non-stateless EC2 instances themselves then additional options such as an S3 bucket or EFS filesystem to preserve state for instances as they are terminated or created.
+\items{
+	\item Moving the applications into private subnets and using the public NAT instances to allow them outbound access to the internet. 
+	\item Adding a custom zone and domain name routing to the load balancer would be a requirement of a live system to give the service a friendly name.
+}
 
-
-
-
+We have also assumed here that the applications are stateless, and that no data is stored in a database as yet. The system is designed so that adding an RDS database such as Aurora MySQL/Postgres will be simple. If the applications develop to become stateful then additional options such as an S3 bucket or EFS filesystem to preserve state for instances as they are terminated or created. Volume snapshots may be needed depending on the needs of the application and use of EBS volumes. 

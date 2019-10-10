@@ -66,16 +66,36 @@
 }
 
 \newcommand{\changes}[2]{
+{
 	\centering
+	\begin{minipage}[!t]{.9\textwidth}
 	\setlength{\fboxsep}{10pt}
 	\setlength{\fboxrule}{1pt}
-\fcolorbox{lightgray}{white}{
-	\parbox{0.8\textwidth}{
-\noindent \textbf{#1}
-\itemslet{#2}
+	\fcolorbox{lightgray}{white}{
+		\parbox{1.0\textwidth}{
+			\textbf{#1}
+			\itemslet{#2}
+		}
+	}
+	\end{minipage}
 }
 }
-\
+
+\newcommand{\internet}[2]{
+	{
+		\centering
+		\begin{minipage}[!t]{.9\textwidth}
+			\setlength{\fboxsep}{10pt}
+			\setlength{\fboxrule}{1pt}
+			\fcolorbox{white}{white}{
+				\parbox{1.0\textwidth}{
+					\centering
+						\textbf{#1:  }{\url{#2}
+				}
+			}
+		}
+	\end{minipage}
+	}
 }
 
 
